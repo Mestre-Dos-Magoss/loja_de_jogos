@@ -12,13 +12,14 @@ export const Link = styled.a`
   cursor:pointer;
 `
 export const Campo = styled.input`
-    display:block;
-    width:100%;
-    padding:10px 16px;
-    border:2px solid #12294fff;
-    border-radius:8px;
-    margin:4px 0 16px 0;
-    background-color: #130d1b83;
+  display:block;
+  width:100%;
+  padding:10px 16px;
+  border:2px solid #12294fff;
+  border-radius:8px;
+  margin:4px 0 16px 0;
+  background-color: #130d1b83;
+  color: ${variaveis.corPrincipal};
 `
 export const CampoChecke = styled.input`
   width: 14px;
@@ -32,6 +33,19 @@ export const FormCheckLabel = styled.div`
   margin-bottom: 12px;
 `
 
+export const Icones = styled.svg`
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #b2b1b0ff;
+  left: 12px;
+  bottom: 9px;
+  color:${variaveis.corTextoSecundaria};
+`
+
+export const CampoContainer = styled.div`
+  position: relative;
+`
 export const Button = styled.button`
   width:100%;
   padding:10px 16px;

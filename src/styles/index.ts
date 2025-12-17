@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 const EstiloGlobal = createGlobalStyle`
-*{
+* {
   padding: 0%;
   margin:0;
   box-sizing: border-box;
@@ -9,7 +9,8 @@ const EstiloGlobal = createGlobalStyle`
   text-decoration: none;
 }
 
-body{
+/* Fundo login */
+/* body {
   position:relative;
   width:100%;
   min-height: 100vh;
@@ -20,7 +21,7 @@ body{
   padding-top: 24px;
 
 }
-body::before{
+body::before {
   content:"";
   position: absolute;
   top:0;
@@ -30,7 +31,13 @@ body::before{
   min-height:100vh;
   opacity:0.90;
   z-index: -1;
-  background-image: radial-gradient(100% 94%, black, #1d0050);
-}
+  background-image: radial-gradient(100% 94%, black, #1d0050); */
+/* } */
+`
+
+export const Container = styled.div`
+  width: 100vw;
+  max-width: 90vw;
+  margin:0 auto;
 `
 export default EstiloGlobal

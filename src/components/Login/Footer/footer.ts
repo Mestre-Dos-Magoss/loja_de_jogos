@@ -30,7 +30,7 @@ export const Button = styled.button`
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
-  padding: 8px 32px;
+  padding: 8px 48px;
   margin-right: 12px;
   cursor:pointer;
 `

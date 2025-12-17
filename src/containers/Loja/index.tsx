@@ -1,8 +1,10 @@
-const Loja = () => {
+import HeaderLoja from "../../components/Loja/Header"
 
-    return (
-        <h1>Bem vindo a sua principal loja de jogos</h1>
-    )
-}
+const Loja = () =>  (
+  <>
+    <HeaderLoja />
+  </>
+)
+
 
 export default Loja
