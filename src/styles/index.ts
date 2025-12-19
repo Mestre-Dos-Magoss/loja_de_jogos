@@ -36,8 +36,7 @@ body::before {
 `
 
 export const Container = styled.div`
-  width: 100vw;
-  max-width: 90vw;
-  margin:0 auto;
+  width: 100%;
+  max-width: 1280px;
 `
 export default EstiloGlobal

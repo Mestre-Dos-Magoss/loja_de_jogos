@@ -9,7 +9,9 @@ export const Header = styled.div`
   position:sticky;
   left:0;
   top:0;
-  padding-top: 12px; 
+  z-index:1;
+  display: flex;
+  justify-content: center;
   height: 64px;
   width:100vw;
   margin-bottom: 5vh;
@@ -18,10 +20,11 @@ export const Header = styled.div`
   `
 export const FormContainer = styled(Container)`
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items:center;
   width: 100%;
   ` 
+
 export const LogoContainer = styled.div`
   display: flex;
   align-items:center;
@@ -40,6 +43,7 @@ export const ContainerImg = styled(ImgContainer)`
       height: 22px;
   }
 `
+
 export const FormContainerComponents = styled(FormContainer)`
   width: 16vw;
 `
@@ -50,7 +54,7 @@ export const IsSelected = styled.div<Props>`
   font-size: 14px;
   border-radius: 8px;
   margin-right: 16px;
-  background-color: ${props => props.Active ? 'rgba(161, 68, 255, 1)' : 'transparent'} ;
+  background-color: ${props => props.Active ? variaveis.corBotao : 'transparent'} ;
   transition: 0.2s;
   cursor:pointer;
   
@@ -61,7 +65,7 @@ export const IsSelected = styled.div<Props>`
   }
 
   &:hover{
-    background-color: ${props => props.Active ? '#a70de9ff' : variaveis.corTextoSecundaria} ;
+    background-color: ${props => props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria} ;
   }
 `
 export const Search = styled.input`

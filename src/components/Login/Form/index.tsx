@@ -29,7 +29,7 @@ const Form = (): JSX.Element => {
                 <S.Link>Esqueceu a senha? </S.Link>
             </S.FormCheckLabel>
         </div>
-            <S.Button>Entrar</S.Button>
+            <S.ButtonForm>Entrar</S.ButtonForm>
         </div>
     )
 }

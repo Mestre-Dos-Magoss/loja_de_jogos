@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import variaveis from "../../../styles/variaveis";
+import { Button } from "../../Buttons/styles";
 
 export const Label = styled.label`
     font-size: 14px;
@@ -46,15 +47,7 @@ export const Icones = styled.svg`
 export const CampoContainer = styled.div`
   position: relative;
 `
-export const Button = styled.button`
-  width:100%;
-  padding:10px 16px;
+export const ButtonForm = styled(Button)`
   margin-bottom:28px;
-  font-weight: bold;
-  font-size: 14px;
-  border-radius:8px;
-  border:none;
   background-image:linear-gradient(266deg, ${variaveis.corDegrade1},${variaveis.corDegrade2});
-  color:#fff;
-  cursor:pointer;
 `

@@ -35,7 +35,7 @@ const FormCadastro = () => (
             <Ss.CampoChecke type="checkbox" />
             <S.Label>Concordo com os <Ss.Link>Termos de Serviço</Ss.Link> e <Ss.Link>Política de Privacidade</Ss.Link></S.Label>
         </Ss.FormCheckLabel>
-        <Ss.Button>Criar conta</Ss.Button>
+        <Ss.ButtonForm>Criar conta</Ss.ButtonForm>
     </div>
 )
 
