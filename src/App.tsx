@@ -8,9 +8,10 @@ function App() {
   return (
     <>
       <EstiloGlobal />
-      {/* <Cadastro /> */}
-      {/* <Loginn /> */}
-      <Loja />
+        {/* <Cadastro /> */}
+        {/* <Loginn /> */}
+        <Loja />
+
     </>
   );
 }

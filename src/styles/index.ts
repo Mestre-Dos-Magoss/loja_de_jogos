@@ -38,5 +38,7 @@ body::before {
 export const Container = styled.div`
   width: 100%;
   max-width: 1280px;
+  display:flex; 
+  justify-content: center; 
 `
 export default EstiloGlobal

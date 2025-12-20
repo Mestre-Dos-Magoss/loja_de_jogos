@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Container } from "../../../styles";
 import variaveis from "../../../styles/variaveis";
 import { Button } from "../../Buttons/styles";
-import { Props } from ".";
+import { Props } from "../Header";
 
 export const Carrousel = styled(Container)`
   position: relative;
   display: block;
   margin: 0 auto;
   width: 100%;
+  margin-bottom:3em;
   /* overflow: hidden; */
   `
 export const CarrouselImg = styled.img`

@@ -1,10 +1,7 @@
 import Paragrafo from '../../Paragrafo'
 import * as S from './styles'
 
-
-export type Props = {
-  Active?: boolean
-}
+import { Props } from '../Header'
 
 const Carrousel = ({ Active }: Props) => {
     
