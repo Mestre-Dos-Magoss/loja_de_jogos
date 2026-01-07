@@ -3,7 +3,7 @@ export type Props = {
     children:string;
     fontSize:number;
     marginBottom?: number;
-    tipo: 'Principal' | 'Secundario';
+    tipo?: 'Principal' | 'Secundario';
 }
 
 const Paragrafo = ({ fontSize, tipo, children, marginBottom }:Props) => (

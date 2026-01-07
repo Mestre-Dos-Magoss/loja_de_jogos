@@ -1,12 +1,13 @@
 import * as S from './styles'
 
 type Props = {
-    children: string
+    children?: string,
+
 }
 
-const Button = ({children}: Props) => (
+const Button = ({ children }: Props) => (
     <S.Button>
-        {children}
+        {children},
     </S.Button>
 )
 

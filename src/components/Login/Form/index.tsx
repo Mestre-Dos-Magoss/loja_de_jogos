@@ -1,10 +1,7 @@
 import * as S from './form'
-import { JSX } from "react/jsx-runtime";
 
-
-const Form = (): JSX.Element => {
+const Form = () => {
   return ( 
-    // <RxEnvelopeClosed />
     <div>
         <S.CampoContainer>
             <S.Label htmlFor="">E-mail</S.Label>

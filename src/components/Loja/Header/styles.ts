@@ -71,6 +71,7 @@ export const IsSelected = styled.div<Props>`
 export const Search = styled.input`
   width: 100%;
   padding:8px 16px;
+  padding-left:48px;
   border-radius: 8px;
   border:1px solid #c5e4e8ff;
   background-color: #f1f2f6;
@@ -86,16 +87,5 @@ export const SearchContainer = styled.div`
     top:8px;
     width:20px;
     height: 20px;
-  }
-`
-export const IconsContainer = styled.div<Props>`
-  background-color: transparent;
-  transition: 0.2s;
-  padding: 8px 10px;
-  border-radius: 6px;
-
-  &:hover {
-    background-color: ${props =>  variaveis.corTextoSecundaria};
-    transition: 0.2s;
   }
 `

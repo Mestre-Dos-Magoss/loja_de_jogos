@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Container } from "../../../styles";
+import { Container, ContainerPrices } from "../../../styles";
 import variaveis from "../../../styles/variaveis";
 import { Button } from "../../Buttons/styles";
 import { Props } from "../Header";
@@ -26,23 +26,6 @@ export const CarrouselDescription = styled.div`
   top:100px;
   margin-left: 16px; 
 `
-export const TagDesconto = styled.div`
-  display:flex;
-  justify-content: center;
-  width:12%; 
-  padding:6px 0;
-  font-size: 12px;
-  margin-bottom:1em;
-  border-radius: 8px;
-  background-color:red;
-  color:black;
-`
-export const Categoria = styled(TagDesconto)`
-  padding: 4px 32px;
-  background-color: transparent;
-  color:${variaveis.corPrincipal};
-  border: 1px solid #c5e4e8ff;
-`
 
 export const CarrouselTitle = styled.h3`
   font-size: 1.6em;
@@ -50,39 +33,10 @@ export const CarrouselTitle = styled.h3`
   color:${variaveis.corPrincipal};
 `
 
-export const OptionsContainer = styled.div`
-  display:flex;
-  width:25%;
-  margin-bottom: 1em;
-  color:${variaveis.corPrincipal};
-`
-
-export const Avaliations = styled(OptionsContainer)`
-  justify-content: space-evenly;
-`
-
-export const Avaliation = styled.div`
-  svg{
-    color:orange;
-    margin-right: 4px;
-    width:20px;
-    height: 20px;
-  }
-`
-
-export const ButtonsContainer = styled(OptionsContainer)`
+export const ButtonsContainer = styled(ContainerPrices)`
   width:400px;
 `
 
-export const PriceNovo = styled.span`
-  color:#49ff49;
-`
-
-export const PriceAntigo = styled(PriceNovo)`
-  color: ${variaveis.corTextoSecundaria};
-  text-decoration:line-through;
-  margin-right:10px;
-`
 export const Button1 = styled(Button)`
   width:30%;
   margin-right: 12px;

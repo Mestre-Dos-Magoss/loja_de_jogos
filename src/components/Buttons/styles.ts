@@ -3,7 +3,7 @@ import variaveis from "../../styles/variaveis";
 
 export const Button = styled.button`
   width:100%;
-  padding:10px 16px;
+  padding:10px 4px;
   border:none;
   border-radius: 12px;
   font-size: 14px;
