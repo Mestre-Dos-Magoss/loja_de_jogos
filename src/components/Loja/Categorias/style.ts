@@ -9,7 +9,6 @@ import { Container } from "../../../styles";
 export const CategoriaContainer = styled(Container)`
   flex-direction: column;
   align-items: start;
-  margin: 0 auto;
   margin-bottom: 4em;
 `
 export const CategoriaTitle = styled.div`

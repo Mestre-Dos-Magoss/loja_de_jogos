@@ -33,8 +33,8 @@ const EstiloGlobal = createGlobalStyle`
     min-height:100vh;
     opacity:0.90;
     z-index: -1;
-    background-image: radial-gradient(100% 94%, black, #1d0050); */
-    /* } */
+    background-image: radial-gradient(100% 94%, black, #1d0050);
+   } */
     `
 export default EstiloGlobal
 
@@ -43,6 +43,44 @@ export const Container = styled.div`
   max-width: 1280px;
   display:flex; 
   justify-content: center; 
+  margin: 0 auto;
+`
+export const ImgContainer = styled.div`
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+  max-width: 68px;
+  width:100%;
+  padding:16px 0;
+  border-radius:16px;
+  margin-bottom:24px;
+  background-image: linear-gradient(322deg,  ${variaveis.corDegrade1} ,${variaveis.corDegrade2});
+
+  svg{
+      color:white;
+      width:36px;
+      height: 36px;
+  }
+`
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items:center;
+  font-size: 16px;
+  margin-right: 32px;
+  `
+
+export const ContainerImg = styled(ImgContainer)`
+  max-width: 36px;
+  padding:6px 6px;
+  border-radius:6px;
+  margin-right:8px;
+  margin-bottom: 0;
+  
+      svg{
+      width:22px;
+      height: 22px;
+  }
 `
 
 export const IconsContainer = styled.div`

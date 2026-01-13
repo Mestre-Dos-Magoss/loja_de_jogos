@@ -16,6 +16,7 @@ export const Campo = styled.input`
   display:block;
   width:100%;
   padding:10px 16px;
+  padding-left: 40px;
   border:2px solid #12294fff;
   border-radius:8px;
   margin:4px 0 16px 0;

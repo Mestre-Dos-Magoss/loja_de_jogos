@@ -3,6 +3,7 @@ import Categorias from "../../components/Loja/Categorias"
 import HeaderLoja from "../../components/Loja/Header"
 import ListaDeJogos from "../../components/Loja/Lista_de_jogos"
 import { Game } from '../../App'
+import Footer from "../../components/Loja/Footer"
 
 const jogos :Game[] = [
   {
@@ -64,6 +65,7 @@ const Loja = () =>  (
     <Carrousel />
     <Categorias />
     <ListaDeJogos jogos={jogos} />
+    <Footer />
   </>
 )
 

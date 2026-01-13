@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import variaveis from "../../../styles/variaveis";
-import { ImgContainer } from '../../Login/Header/header'
 import { Props } from ".";
 import { Container } from "../../../styles";
 
@@ -19,30 +18,11 @@ export const Header = styled.div`
   background-color: ${variaveis.corPrincipal};
   `
 export const FormContainer = styled(Container)`
-  display:flex;
+  margin: 0;
   justify-content: space-between;
   align-items:center;
   width: 100%;
   ` 
-
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items:center;
-  font-size: 16px;
-  margin-right: 32px;
-  `
-export const ContainerImg = styled(ImgContainer)`
-  max-width: 60px;
-  padding:6px 6px;
-  border-radius:6px;
-  margin-right:8px;
-  margin-bottom: 0;
-  
-      svg{
-      width:22px;
-      height: 22px;
-  }
-`
 
 export const FormContainerComponents = styled(FormContainer)`
   width: 16vw;
