@@ -1,15 +1,11 @@
 import Paragrafo from "../../Paragrafo"
 import { Container } from "../../../styles"
-import { Game } from "../../../App"
 import CardJogo from "../Card_jogo"
 import * as S from "./styles"
 
-type Props = {
-  jogos: Game[]
-}
+import { Props } from '../../../containers/Loja/index'
 
 const ListaDeJogos = ({ jogos }:Props) => {
-
     return (
         <S.ContainerCards>
             <div>

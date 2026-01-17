@@ -4,8 +4,8 @@ import variaveis from "../../../styles/variaveis";
 import { Button } from "../../Buttons/styles";
 
 export const CardGame = styled.div`
-  max-width: 300px;
-  width: 140%;
+  max-width: 308px;
+  width: 100%;
   height: 256px;
   margin-bottom: 4em;
   border: 1px solid black;
@@ -15,13 +15,12 @@ export const CardGame = styled.div`
 `
 export const CardIMG = styled.div`
   position: relative;
-  max-width: 350px;
   width: 100%;
   height:128px;
 
   img{
-    width: 100%;
-    height: 100%;
+    width: 308px;
+    height: 128px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
   }

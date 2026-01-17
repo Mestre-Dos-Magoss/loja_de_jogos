@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EstiloGlobal from './styles';
 import Loginn from './containers/Login';
 import Cadastro from './containers/Cadastro';
@@ -11,7 +11,7 @@ export type Game = {
   avaliationGame: number
   realeaseDate: string
   developmente: string
-  tag: string[]
+  tag: string
   price: number
   newPrice: number
   descontPrice: number
@@ -19,12 +19,23 @@ export type Game = {
 }
 
 function App() {
+
+  const [jogo, setJogos ] = useState([])
+
+  fetch('http://localhost:4000/Jogos').
+    then((res) =>{
+      return res.json()
+    }).
+    then((game) => {
+      return setJogos(game)
+    })
+
   return (
     <>
       <EstiloGlobal />
         {/* <Cadastro /> */}
         {/* <Loginn /> */}
-        <Loja />
+        <Loja jogos={jogo} />
     </>
   );
 }

@@ -44,9 +44,9 @@ export const IsSelected = styled.div<Props>`
     height:16px;
   }
 
-  &:hover{
+  /* &:hover{
     background-color: ${props => props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria} ;
-  }
+  } */
 `
 export const Search = styled.input`
   width: 100%;

@@ -20,7 +20,8 @@ export const iconeAzul = styled.svg`
 
 export const ListContainer = styled.ul`
   display:flex;
-  gap: 8em;
+  gap: 1em;
+  flex-wrap: wrap;
 `
 
 export const ContainerCards = styled(Container)`
