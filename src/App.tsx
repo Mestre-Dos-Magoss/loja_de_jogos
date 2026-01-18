@@ -3,6 +3,7 @@ import EstiloGlobal from './styles';
 import Loginn from './containers/Login';
 import Cadastro from './containers/Cadastro';
 import Loja from './containers/Loja';
+import PopUps from './components/Loja/Pop-ups';
 
 export type Game = {
   name: string
@@ -35,7 +36,8 @@ function App() {
       <EstiloGlobal />
         {/* <Cadastro /> */}
         {/* <Loginn /> */}
-        <Loja jogos={jogo} />
+        { <Loja jogos={jogo} /> }
+        <PopUps />
     </>
   );
 }

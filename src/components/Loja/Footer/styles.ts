@@ -81,12 +81,7 @@ export const ContatoItens = styled.div`
     margin-right: 12px;
   }
 `
-export const Line = styled.div`
-  width: 100%;
-  height: 2px;
-  background-color: #e4e7e8;
-  margin-bottom: 2em;
-  `
+
 export const TermosContainer = styled.div`
   display:flex;
   justify-content: space-between;

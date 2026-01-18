@@ -6,7 +6,7 @@ import { Button } from "../../Buttons/styles";
 export const CardGame = styled.div`
   max-width: 308px;
   width: 100%;
-  height: 256px;
+  height: 286px;
   margin-bottom: 4em;
   border: 1px solid black;
   border-radius: 8px;
@@ -16,11 +16,11 @@ export const CardGame = styled.div`
 export const CardIMG = styled.div`
   position: relative;
   width: 100%;
-  height:128px;
+  height:160px;
 
   img{
     width: 308px;
-    height: 128px;
+    height: 160px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
   }
@@ -48,24 +48,6 @@ export const ContainerDescription = styled.div`
   }
 `
 
-export const Avaliatioon = styled(Avaliation)`
-  display:flex;
-  align-items: center;
-  font-size:12px;
-  margin-left:8px;
-  color:black;
-
-  svg {
-    width: 12px;
-    height: 12px;
-  }
-`
-
-export const Categoriaa = styled(Categoria)`
-  color: ${variaveis.corFundo};
-  border: 1px solid ${variaveis.corTextoSecundaria};
-  margin-bottom: 0;
-`
 export const PriceAntigoo = styled(PriceAntigo)`
   font-size: 14px;
   color: ${variaveis.corFundo};

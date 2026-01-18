@@ -148,3 +148,29 @@ export const ContainerPrices = styled.div`
   margin-bottom: 1em;
   color:${variaveis.corPrincipal};
 `
+
+export const Avaliatioon = styled(Avaliation)`
+  display:flex;
+  align-items: center;
+  font-size:12px;
+  margin-left:8px;
+  color:black;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+`
+
+export const Categoriaa = styled(Categoria)`
+  color: ${variaveis.corFundo};
+  border: 1px solid ${variaveis.corTextoSecundaria};
+  margin-bottom: 0;
+`
+
+export const Line = styled.div`
+  width: 100%;
+  height: 2px;
+  background-color: #e4e7e8;
+  margin-bottom: 2em;
+  `

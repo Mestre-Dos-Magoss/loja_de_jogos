@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { Container, ContainerImg, LogoContainer } from "../../../styles"
+import { ContainerImg, Line } from "../../../styles"
 import Paragrafo from "../../Paragrafo"
 
 const Footer = () => (
@@ -100,7 +100,7 @@ const Footer = () => (
                 </S.ContatoItens>
             </S.Contato>
         </S.Footer>
-        <S.Line />
+        <Line />
         <S.TermosContainer>
            <Paragrafo fontSize={14}>&copy; 2026 GameStore. Todos os direitos reservados.</Paragrafo>
             <ul>
