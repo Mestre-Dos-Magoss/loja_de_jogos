@@ -1,5 +1,5 @@
 import { Game } from '../../../App'
-import { Avaliations, Avaliatioon, Categoriaa, ContainerPrices, IconsContainer, PriceNovo } from '../../../styles/index'
+import { Avaliations, Avaliatioon, Categoriaa, ContainerPrices, IconsContainer, PriceNovo, PriceAntigoo } from '../../../styles/index'
 
 import { P } from '../../Paragrafo/Paragrafo'
 import * as S from './styles'
@@ -40,9 +40,9 @@ const CardJogo = ({ jogo }: Props) => {
                 </Avaliations>
                 <S.ActionContainer>
                 <ContainerPrices>
-                    <S.PriceAntigoo>
+                    <PriceAntigoo>
                         R${jogo.price}
-                    </S.PriceAntigoo>
+                    </PriceAntigoo>
                     {jogo.descontPrice <= 0 ? (
                         ''
                     ) : (

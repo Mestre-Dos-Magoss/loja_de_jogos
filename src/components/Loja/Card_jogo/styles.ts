@@ -48,10 +48,6 @@ export const ContainerDescription = styled.div`
   }
 `
 
-export const PriceAntigoo = styled(PriceAntigo)`
-  font-size: 14px;
-  color: ${variaveis.corFundo};
-`
 export const ActionContainer = styled.div`
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,7 @@ const EstiloGlobal = createGlobalStyle`
   padding: 0%;
   margin:0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-decoration: none;
   list-style: none;
 }
@@ -104,7 +104,7 @@ export const TagDesconto = styled.div`
   font-size: 12px;
   margin-bottom:1em;
   border-radius: 8px;
-  background-color:red;
+  background-color:${variaveis.corTag};
   color:black;
 `
 
@@ -174,3 +174,8 @@ export const Line = styled.div`
   background-color: #e4e7e8;
   margin-bottom: 2em;
   `
+
+  export const PriceAntigoo = styled(PriceAntigo)`
+  font-size: 14px;
+  color: ${variaveis.corFundo};
+`

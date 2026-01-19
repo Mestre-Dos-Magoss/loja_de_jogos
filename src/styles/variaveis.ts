@@ -7,5 +7,6 @@ export default {
   corDegrade2:'#c574feff',
   corBotao: 'rgba(161, 68, 255, 1)',
   corBotaoEfeito: '#a70de9ff',
-  corCard:'#f0f9fcff'
+  corCard:'#f0f9fcff',
+  corTag: '#de2323'
 }
