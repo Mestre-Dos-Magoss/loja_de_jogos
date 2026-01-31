@@ -8,5 +8,6 @@ export default {
   corBotao: 'rgba(161, 68, 255, 1)',
   corBotaoEfeito: '#a70de9ff',
   corCard:'#f0f9fcff',
-  corTag: '#de2323'
+  corTag: '#de2323',
+  cinzaFraco: '#f5f5f5'
 }

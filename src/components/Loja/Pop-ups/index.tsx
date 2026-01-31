@@ -1,7 +1,6 @@
-import { Avaliatioon, Categoriaa, IconsContainer, Line, PriceAntigo, TagDesconto } from '../../../styles'
+import { ActionContainer, Avaliatioon, Categoriaa, FavoritarContainer, IconsContainer, Line, PriceAntigo, TagDesconto } from '../../../styles'
 import Paragrafo from '../../Paragrafo'
 import { P } from '../../Paragrafo/Paragrafo'
-import { ActionContainer, FavoritarContainer } from '../Card_jogo/styles'
 import * as S from './styles'
 
 

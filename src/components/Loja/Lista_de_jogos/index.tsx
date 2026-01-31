@@ -1,5 +1,4 @@
 import Paragrafo from "../../Paragrafo"
-import { Container } from "../../../styles"
 import CardJogo from "../Card_jogo"
 import * as S from "./styles"
 
@@ -81,7 +80,7 @@ const ListaDeJogos = ({ jogos }:Props) => {
                         </li>
                     ))}
                 </S.ListContainer>
-                                <S.ListContainer>
+                <S.ListContainer>
                     {jogos.map((jogo) => (
                         <li key={jogo.id}>
                             <CardJogo jogo={{

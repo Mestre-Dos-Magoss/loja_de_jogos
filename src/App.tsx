@@ -5,6 +5,7 @@ import Cadastro from './containers/Cadastro';
 import Loja from './containers/Loja';
 import PopUps from './components/Loja/Pop-ups';
 import Carrinho from './components/Loja/Carrinho';
+import AreaPagamento from './containers/AreaPagamento';
 
 export type Game = {
   name: string
@@ -39,7 +40,8 @@ function App() {
         {/* <Loginn /> */}
         {/* { <Loja jogos={jogo} /> } */}
         {/* <PopUps /> */}
-        <Carrinho />
+        {/* <Carrinho /> */}
+        <AreaPagamento />
     </>
   );
 }

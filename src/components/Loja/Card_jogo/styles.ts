@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Avaliation, Categoria, PriceAntigo, TagDesconto } from "../../../styles";
+import { TagDesconto } from "../../../styles";
 import variaveis from "../../../styles/variaveis";
 import { Button } from "../../Buttons/styles";
 
@@ -26,14 +26,7 @@ export const CardIMG = styled.div`
   }
 
 `
-export const FavoritarContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 8px;
-  color: white;
-  `
+
 export const TagDescontoo =  styled(TagDesconto)`
   padding:4px 8px;
   max-width: 48px;
@@ -46,12 +39,6 @@ export const ContainerDescription = styled.div`
   h4 {
     color:${ variaveis.corFundo}
   }
-`
-
-export const ActionContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
 `
 
 export const ButtonCart = styled(Button)`
