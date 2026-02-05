@@ -37,8 +37,8 @@ export const FormCheckLabel = styled.div`
 
 export const Icones = styled.svg`
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 22px;
   color: #b2b1b0ff;
   left: 12px;
   bottom: 9px;

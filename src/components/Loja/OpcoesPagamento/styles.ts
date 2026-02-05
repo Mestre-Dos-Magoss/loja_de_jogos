@@ -15,13 +15,14 @@ export const OpcaoDePagamanto = styled.li<Props>`
   border: 2px solid ${props => props.$pagamento ? 'rgba(173,70,255)' : variaveis.corTextoSecundaria};
   border-radius: 8px;
   background-color: ${props => props.$pagamento ? 'rgba(173,70,255,0.1)' : '#fff'};
+  cursor: pointer;
 
-  svg {
-      width: 30px;
-      height: 30px;
-      margin: 0 30px 4px;
-      color: ${ props => props.$pagamento ? variaveis.corBotaoEfeito : variaveis.corFundo}
-  }
+  svg{ 
+    width: 30px;
+    height: 30px;
+    margin: 0 30px 4px;
+    color: ${ props => props.$pagamento ? variaveis.corBotaoEfeito : variaveis.corFundo}
+    }
 
   span {
     font-size: 12px;

@@ -92,10 +92,10 @@ export const IconsContainer = styled.div`
   padding: 8px 10px;
   border-radius: 6px;
 
-  /* &:hover {
-    background-color: ${props =>  variaveis.corTextoSecundaria};
+  &:hover {
+    background-color: ${variaveis.corTextoSecundaria};
     transition: 0.2s;
-  } */
+  }
 `
 export const TagDesconto = styled.div`
   display:flex;

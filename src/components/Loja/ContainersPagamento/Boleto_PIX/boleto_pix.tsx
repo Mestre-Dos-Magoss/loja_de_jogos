@@ -2,6 +2,7 @@ import * as enums from '../../../../utils/enuns/formasDePagamento'
 
 import {Campo, CampoContainer, ContainerPagamentoCinza, ContainerPagamento as ContainerPagamentos, PagamentoHeaderItemVariante} from '../../../../styles/index'
 import { P } from '../../../Paragrafo/Paragrafo'
+import Icones from '../../../../styles/icones'
 import * as S from './styles'
 
 type Props = {
@@ -20,21 +21,21 @@ const ContainerBoletoPIX = ({ tipoDePagamento }: Props) => {
          <PagamentoHeaderItemVariante>
             {tipoDePagamento === enums.FormasDePagamento.PIX ? (
                 <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-qr-code w-6 h-6" data-fg-cjnp129="35.22:99.217:/components/CheckoutSection.tsx:434:21:17332:30:e:QrCode::::::DoCY"><rect width="5" height="5" x="3" y="3" rx="1"></rect><rect width="5" height="5" x="16" y="3" rx="1"></rect><rect width="5" height="5" x="3" y="16" rx="1"></rect><path d="M21 16h-3a2 2 0 0 0-2 2v3"></path><path d="M21 21v.01"></path><path d="M12 7v3a2 2 0 0 1-2 2H7"></path><path d="M3 12h.01"></path><path d="M12 3h.01"></path><path d="M12 16v.01"></path><path d="M16 12h1"></path><path d="M21 12v.01"></path><path d="M12 21v-1"></path></svg>
+                    {Icones.pix}
                     PIX Copia e Cola
                 </>
             ) : (
                 <>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-barcode w-6 h-6" data-fg-cjnp163="35.22:99.217:/components/CheckoutSection.tsx:502:21:20428:31:e:Barcode::::::DHaC"><path d="M3 5v14"></path><path d="M8 5v14"></path><path d="M12 5v14"></path><path d="M17 5v14"></path><path d="M21 5v14"></path></svg>
+                {Icones.boleto}
                 Boleto Bancário
                 </>
             )}
         </PagamentoHeaderItemVariante>
         <ContainerPagamentoCinza> 
             {tipoDePagamento === enums.FormasDePagamento.PIX ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-qr-code w-6 h-6" data-fg-cjnp129="35.22:99.217:/components/CheckoutSection.tsx:434:21:17332:30:e:QrCode::::::DoCY"><rect width="5" height="5" x="3" y="3" rx="1"></rect><rect width="5" height="5" x="16" y="3" rx="1"></rect><rect width="5" height="5" x="3" y="16" rx="1"></rect><path d="M21 16h-3a2 2 0 0 0-2 2v3"></path><path d="M21 21v.01"></path><path d="M12 7v3a2 2 0 0 1-2 2H7"></path><path d="M3 12h.01"></path><path d="M12 3h.01"></path><path d="M12 16v.01"></path><path d="M16 12h1"></path><path d="M21 12v.01"></path><path d="M12 21v-1"></path></svg>
+                Icones.pix
             ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-barcode w-6 h-6" data-fg-cjnp163="35.22:99.217:/components/CheckoutSection.tsx:502:21:20428:31:e:Barcode::::::DHaC"><path d="M3 5v14"></path><path d="M8 5v14"></path><path d="M12 5v14"></path><path d="M17 5v14"></path><path d="M21 5v14"></path></svg>
+                Icones.boleto
             )}
         </ContainerPagamentoCinza>
         <div>
@@ -52,7 +53,7 @@ const ContainerBoletoPIX = ({ tipoDePagamento }: Props) => {
                 )}
             </S.ContainerPagamentoCodigo>
             <S.ButtonCopiar>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-copy w-4 h-4 mr-2" data-fg-cjnp146="35.22:99.217:/components/CheckoutSection.tsx:462:27:18753:33:e:Copy::::::EKaP"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                {Icones.copiar}
             {tipoDePagamento === enums.FormasDePagamento.PIX ? (
                 <>
                   copiar chave pix  

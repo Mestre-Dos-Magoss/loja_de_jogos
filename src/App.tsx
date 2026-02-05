@@ -36,12 +36,12 @@ function App() {
   return (
     <>
       <EstiloGlobal />
-        {/* <Cadastro /> */}
+        <Cadastro />
         {/* <Loginn /> */}
         {/* { <Loja jogos={jogo} /> } */}
         {/* <PopUps /> */}
         {/* <Carrinho /> */}
-        <AreaPagamento />
+        {/* <AreaPagamento /> */}
     </>
   );
 }

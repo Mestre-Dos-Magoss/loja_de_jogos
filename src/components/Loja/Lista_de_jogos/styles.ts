@@ -6,15 +6,20 @@ export const Secao = styled.div`
   display: flex;
   align-items:center;
   margin-bottom: 1em;
+
+  svg {
+  }
   p{
     color:${variaveis.corFundo};
     margin-left:8px;
   }
-`
-export const iconeLaranja = styled.svg`
+  `
+export const IconeLaranja = styled.svg`
+  width: 24px;
+  height:30px;
   color: orange;
 `
-export const iconeAzul = styled.svg`
+export const IconeAzul = styled(IconeLaranja)`
   color: blue;
 `
 
