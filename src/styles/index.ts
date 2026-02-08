@@ -146,7 +146,7 @@ export const Avaliations = styled.div`
 
 export const ContainerPrices = styled.div`
   display:flex;
-  width:25%;
+  width:35%;
   margin-bottom: 1em;
   color:${variaveis.corPrincipal};
 `
@@ -362,3 +362,32 @@ export const FavoritarContainer = styled.div`
   padding: 8px 8px;
   color: white;
   `
+
+    export const ButtonJogar = styled(Button)` 
+    font-size: 14px;
+    padding: 8px 16px;
+    text-transform: capitalize;
+    background-color: ${variaveis.corBotao};
+    color: ${variaveis.corFundo};
+    border-radius: 8px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: ${variaveis.corFundo};
+      margin-right: 16px;
+    }
+  `
+  
+export const ButtonsIcons = styled(Button)` // if selected should be white
+  padding: 8px 8px;
+  background-color: ${variaveis.corTextoSecundaria};
+  border-radius: 8px;
+  color: ${variaveis.corFundo};
+
+svg {
+  width: 20px;
+  height: 20px;
+  color:${variaveis.corFundo};
+}
+`

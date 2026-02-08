@@ -1,25 +1,12 @@
 import React, { useState } from 'react';
-import EstiloGlobal from './styles';
+import EstiloGlobal, { Container } from './styles';
 import Loginn from './containers/Login';
 import Cadastro from './containers/Cadastro';
 import Loja from './containers/Loja';
 import PopUps from './components/Loja/Pop-ups';
 import Carrinho from './components/Loja/Carrinho';
 import AreaPagamento from './containers/AreaPagamento';
-
-export type Game = {
-  name: string
-  description: string
-  image: string
-  avaliationGame: number
-  realeaseDate: string
-  developmente: string
-  tag: string
-  price: number
-  newPrice: number
-  descontPrice: number
-  id: number
-}
+import Bibilioteca from './containers/Biblioteca';
 
 function App() {
 
@@ -36,12 +23,13 @@ function App() {
   return (
     <>
       <EstiloGlobal />
-        <Cadastro />
+        {/* <Cadastro /> */}
         {/* <Loginn /> */}
         {/* { <Loja jogos={jogo} /> } */}
         {/* <PopUps /> */}
         {/* <Carrinho /> */}
         {/* <AreaPagamento /> */}
+          <Bibilioteca />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import * as S from './Paragrafo'
 export type Props = {
-    children:string;
+    children: string | number;
     fontSize:number;
     marginBottom?: number;
     tipo?: 'Principal' | 'Secundario';
