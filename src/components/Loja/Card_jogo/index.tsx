@@ -12,7 +12,7 @@ type Props = {
 }
 
 const CardJogo = ({ jogo }: Props) => {
-    const estaNaBiblioteca = true // somente para os testes
+    const estaNaBiblioteca = false // somente para os testes
     return (
         <S.CardGame estaNaBiblioteca={estaNaBiblioteca}>
             <S.CardIMG>

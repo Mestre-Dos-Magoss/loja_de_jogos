@@ -33,3 +33,11 @@ export const ContainerCards = styled(Container)`
   display:block;
   margin: 0 auto;
 `
+
+export const TextCharging = styled.h1`
+  display: block;
+  margin-bottom: 1em;
+  background-image: linear-gradient(220deg, ${variaveis.corAzul}, ${variaveis.corBotao});
+  background-clip:text;
+  color:transparent;
+`

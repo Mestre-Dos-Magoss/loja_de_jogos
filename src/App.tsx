@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EstiloGlobal, { Container } from './styles';
 import Loginn from './containers/Login';
 import Cadastro from './containers/Cadastro';
@@ -7,29 +7,32 @@ import PopUps from './components/Loja/Pop-ups';
 import Carrinho from './components/Loja/Carrinho';
 import AreaPagamento from './containers/AreaPagamento';
 import Bibilioteca from './containers/Biblioteca';
+import Game from './models/jogo';
 
 function App() {
 
-  // const [jogo, setJogos ] = useState([])
+  const [jogo, setJogo ] = useState<Game[]>([])
 
-  // fetch('http://localhost:4000/Jogos').
-  //   then((res) =>{
-  //     return res.json()
-  //   }).
-  //   then((game) => {
-  //     return setJogos(game)
-  //   })
+  useEffect(() => {
+    fetch('https://file-games.vercel.app/api/games').
+      then((res) =>{
+        return res.json()
+      }).
+      then((game) => {
+        return setJogo(game)
+      })
+  },[jogo])
 
   return (
     <>
       <EstiloGlobal />
         {/* <Cadastro /> */}
         {/* <Loginn /> */}
-        {/* { <Loja jogos={jogo} /> } */}
+        { <Loja jogos={jogo} /> }
         {/* <PopUps /> */}
         {/* <Carrinho /> */}
         {/* <AreaPagamento /> */}
-          <Bibilioteca />
+          {/* <Bibilioteca /> */}
     </>
   );
 }

@@ -16,23 +16,29 @@ const ListaDeJogos = ({ jogos }:Props) => {
                     <Paragrafo fontSize={16}>Ofertas Especiais</Paragrafo>
                 </S.Secao>
                 <S.ListContainer>
-                    {jogos.map((jogo) => (
-                        <li key={jogo.id}>
-                            <CardJogo jogo={{
-                                name: jogo.name,
-                                description: jogo.description,
-                                image: jogo.image,
-                                avaliationGame: jogo.avaliationGame,
-                                realeaseDate: jogo.realeaseDate,
-                                developmente: jogo.developmente,
-                                tag: jogo.tag,
-                                price: jogo.price,
-                                newPrice: jogo.newPrice,
-                                descontPrice: jogo.descontPrice,
-                                id: jogo.id
-                            }} />
-                        </li>
-                    ))}
+                    {jogos.length <= 0 ? (
+                        <S.TextCharging>Carregando...</S.TextCharging>
+                    ) : ( 
+                        <>
+                            {jogos.map((jogo) => (
+                                <li key={jogo.id}>
+                                    <CardJogo jogo={{
+                                        name: jogo.name,
+                                        description: jogo.description,
+                                        image: jogo.image,
+                                        avaliationGame: jogo.avaliationGame,
+                                        realeaseDate: jogo.realeaseDate,
+                                        developmente: jogo.developmente,
+                                        tag: jogo.tag,
+                                        price: jogo.price,
+                                        newPrice: jogo.newPrice,
+                                        descontPrice: jogo.descontPrice,
+                                        id: jogo.id
+                                    }} />
+                                </li>
+                            ))}
+                        </>
+                    )}
                 </S.ListContainer>
             </div>
             <div>
