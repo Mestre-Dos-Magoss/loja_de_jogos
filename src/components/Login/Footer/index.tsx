@@ -19,7 +19,7 @@ const Footer = ({ link, textLink }: PropsLink) => (
                 </S.Redes>
                 <S.ContainerText>
                     <Paragrafo tipo='Secundario' fontSize={14}>Não tem uma conta?  </Paragrafo>
-                    <S.Link href={link}>{ textLink}</S.Link>
+                    <S.Link to={link}>{ textLink}</S.Link>
                 </S.ContainerText>
             </S.Footer>
 )

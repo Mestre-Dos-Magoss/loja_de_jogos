@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import variaveis from "../../../styles/variaveis";
-
+import {Props as View} from './index'
 export type Props = {
   temProdutos: boolean;
 }
@@ -33,7 +33,9 @@ export const CarrinhoSubTotal = styled.div`
   }
 `
 
-export const CarrinhoContainer = styled.div`
+export const CarrinhoContainer = styled.div<View>`
+  display: ${props => props.viewShopping ? 'block' : 'none'};
+  z-index: 2;
   position: fixed;
   right: 0;
   top:0;
@@ -41,6 +43,7 @@ export const CarrinhoContainer = styled.div`
   width: 100%;
   height: 100vh;
   border: 1px solid aliceblue;
+  background-color: ${variaveis.corPrincipal};
 `
 
 export const CarrinhoComProduto = styled.div`
@@ -58,7 +61,6 @@ export const CarrinhoComProduto = styled.div`
     height: 80px;
     border-radius: 4px;
   }
-
   `
 
 export const ExcluirGame = styled.div`

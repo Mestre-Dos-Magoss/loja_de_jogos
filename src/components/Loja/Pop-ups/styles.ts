@@ -2,8 +2,10 @@ import styled from "styled-components";
 import variaveis from "../../../styles/variaveis";
 import { Button } from '../../Buttons/styles'
 import { PriceNovo, TagDesconto } from "../../../styles";
+import {Props} from './index'
 
-export const PopUpContainer = styled.div`
+export const PopUpContainer = styled.div<Props>`
+  display: ${props => props.viewPopUp ? 'block' : 'none'};
   position: fixed;
   z-index: 1;
   bottom: 14px;

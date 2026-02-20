@@ -1,26 +1,19 @@
+import Game from '../../models/jogo'
+import CardJogo from '../../components/Loja/Card_jogo'
+import CardInLine from '../../components/Loja/CardInLine'
 import CardConquista from '../../components/Loja/CardConquista'
 import Paragrafo from '../../components/Paragrafo'
+
 import Icones from '../../styles/icones'
 import * as S from './styles'
 import { ButtonsIcons, Container } from '../../styles'
 import variaveis from '../../styles/variaveis'
-import CardJogo from '../../components/Loja/Card_jogo'
-import CardInLine from '../../components/Loja/CardInLine'
 
-const Bibilioteca = () => {
-    const GameTest = {
-        name: "The Witcher 3: Wild Hunt" ,
-        description: "Você é Geralt de Rívia, mercenário matador de monstros. Você está em um continente devastado pela guerra e infestado de monstros para você explorar à vontade. Sua tarefa é encontrar Ciri, a Criança da Profecia — uma arma viva que pode alterar a forma do mundo.",
-        image: "https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f",
-        avaliationGame: 5.0,
-        realeaseDate: "18/05/2015",
-        developmente: "CD PROJEKT RED",
-        tag: "RPG",
-        price: 49.99,
-        newPrice: 39.99,
-        descontPrice: 21,
-        id: 1
-    }
+type Props = {
+    jogo: Game[]
+}
+
+const Bibilioteca = ({ jogo }: Props) => {
 
     const Conquistas = [
         {
@@ -82,8 +75,28 @@ const Bibilioteca = () => {
                     </div>
                 </S.ContainerBotoes>
                 <div className='lista-de-jogos-comprados'>
-                    <CardJogo jogo={GameTest}/>
-                    <CardInLine jogo={GameTest}/>
+                    <ul>
+                        {jogo.map((jogo) => (
+                            <li>
+                            <CardJogo
+                                key={jogo.id}
+                                name={jogo.name}
+                                image={jogo.image}
+                                avaliationGame={jogo.avaliationGame}
+                                descontPrice={jogo.descontPrice}
+                                newPrice={jogo.newPrice}
+                                price={jogo.price}
+                                tag={jogo.tag}
+                                />
+                            </li>
+                          )
+                        )}
+                    </ul>
+                    <ul>
+                        {jogo.map((jogo) => (
+                            <li><CardInLine key={jogo.id} jogo={jogo}/></li>
+                        ))}
+                    </ul>
                 </div>
             </S.BibliotecaCheia>
         </Container>

@@ -27,7 +27,7 @@ const Carrousel = ({ Active }: Props) => {
             -30% OFF
           </TagDesconto>
           <S.CarrouselTitle>Cyber Legends: Neon City</S.CarrouselTitle>
-          <Paragrafo marginBottom={16} fontSize={16} tipo='Secundario'>Mergulhe em uma metrópole cyberpunk futurista repleta de aventuras e perigos. Escolha seu caminho em um mundo de tecnologia e conspiração.</Paragrafo>
+          <Paragrafo marginBottom={16} fontSize={16} tipo='Principal'>Mergulhe em uma metrópole cyberpunk futurista repleta de aventuras e perigos. Escolha seu caminho em um mundo de tecnologia e conspiração.</Paragrafo>
           <Avaliations>
             <Avaliation>
               {Icones.estrela}
@@ -46,7 +46,7 @@ const Carrousel = ({ Active }: Props) => {
             <S.Button2>Adicionar ao Carrinho</S.Button2>
           </S.ButtonsContainer>
         </S.CarrouselDescription>
-            <S.CarrouselImg src="https://images.unsplash.com/photo-1763402887477-d8815a20767c?w=800&q=80" alt="" />
+            <S.CarrouselImg src="https://cdn.loaded.com/media/catalog/product/c/o/co2228_7_.jpg" alt="" />
     </S.Carrousel>
   )
 }

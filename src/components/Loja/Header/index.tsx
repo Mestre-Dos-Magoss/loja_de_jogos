@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Icones from '../../../styles/icones'
 import { ContainerImg, IconsContainer, LogoContainer } from '../../../styles/index'
 import * as S from './styles'
@@ -7,7 +8,8 @@ export type Props = {
 }
 
 const HeaderLoja = ({ Active }: Props) => {
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false) //apenas para testar o comportamento
+    
     return (
         <S.Header>
             <S.FormContainer>
@@ -18,14 +20,14 @@ const HeaderLoja = ({ Active }: Props) => {
                         </ContainerImg>
                         <p>GamesStore</p>
                     </LogoContainer>
-                    <S.IsSelected Active >
-                        {Icones.loja}
-                        Loja
-                    </S.IsSelected>
-                    <S.IsSelected >
+                    <S.IsSelectedLink to={'/'} Active >
+                            {Icones.loja}
+                            Loja
+                    </S.IsSelectedLink>
+                    <S.IsSelectedLink  to={'/library'}>
                         {Icones.biblioteca}
                         Biblioteca
-                    </S.IsSelected>
+                    </S.IsSelectedLink>
                 </S.FormContainerComponents>
                     <S.SearchContainer>
                         {Icones.lupa}
@@ -35,15 +37,21 @@ const HeaderLoja = ({ Active }: Props) => {
                     <IconsContainer>
                         {Icones.sol}
                     </IconsContainer>
-                    <S.IsSelected>
-                        {Icones.pessoa}
+                    <S.IsSelected onClick={() => setIsLoggedIn(!isLoggedIn)}>
+                            {Icones.pessoa}
                         Juliano
+                        <S.PopUpSair to={'/login'} isActive={isLoggedIn}>
+                            <div>
+                                {Icones.sair}
+                            </div>
+                            sair
+                        </S.PopUpSair>
                     </S.IsSelected>
                     <IconsContainer>
                         {Icones.coracao}
                     </IconsContainer>
                     <IconsContainer>
-                        {Icones.carrinho}
+                            {Icones.carrinho}
                     </IconsContainer>
                 </S.FormContainerComponents>
             </S.FormContainer>

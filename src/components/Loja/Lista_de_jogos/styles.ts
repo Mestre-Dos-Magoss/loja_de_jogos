@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Container } from '../../../styles/index'
 import variaveis from "../../../styles/variaveis";
+import { Props } from ".";
 
 export const Secao = styled.div`
   display: flex;
@@ -14,13 +15,10 @@ export const Secao = styled.div`
     margin-left:8px;
   }
   `
-export const IconeLaranja = styled.svg`
+export const ColorIcon = styled.svg<Omit<Props, 'jogos' | 'title' | 'icon'>>`
   width: 24px;
   height:30px;
-  color: orange;
-`
-export const IconeAzul = styled(IconeLaranja)`
-  color: blue;
+  color: ${props => props.colorIcon};
 `
 
 export const ListContainer = styled.ul`

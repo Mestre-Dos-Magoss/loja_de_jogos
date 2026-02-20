@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import variaveis from "../../../styles/variaveis";
-import { Button } from "../../Buttons/styles";
+import { Link as Links} from "react-router-dom";
 
 export const Label = styled.label`
     font-size: 14px;
@@ -48,7 +48,19 @@ export const Icones = styled.svg`
 export const CampoContainer = styled.div`
   position: relative;
 `
-export const ButtonForm = styled(Button)`
+export const ButtonForm = styled(Links)` //rever
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  padding:10px 4px;
+  border:none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color:${variaveis.corPrincipal};
+  background-color: transparent;
+  cursor:pointer;
   margin-bottom:28px;
   background-image:linear-gradient(266deg, ${variaveis.corDegrade1},${variaveis.corDegrade2});
 `

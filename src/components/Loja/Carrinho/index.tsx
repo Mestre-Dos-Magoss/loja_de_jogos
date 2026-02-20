@@ -3,8 +3,12 @@ import { P } from "../../Paragrafo/Paragrafo"
 import { CarrinhoHeader, CarrinhoProdutos, ButtonCarrinho, CarrinhoFooter, InfosGame, PriceAntigoo, PriceNovo } from '../../../styles'
 import * as S from './styles'
 
-const Carrinho = () => (
-    <S.CarrinhoContainer>
+export type Props = {
+    viewShopping: boolean
+}
+
+const Carrinho = ({ viewShopping }: Props) => (
+    <S.CarrinhoContainer viewShopping={viewShopping}>
         <CarrinhoHeader>
             <S.CarrinhoLogo>
                 {Icones.sacola}

@@ -13,8 +13,13 @@ const EstiloGlobal = createGlobalStyle`
   list-style: none;
 }
 
-/* Fundo login */
-/* body {
+html, body, #root {
+  height:100%;
+}
+ `
+export default EstiloGlobal
+
+export const ContainerCadastro = styled.div`
   position:relative;
   width:100%;
   min-height: 100vh;
@@ -24,21 +29,20 @@ const EstiloGlobal = createGlobalStyle`
   background-repeat: no-repeat;
   padding-top: 24px;
   
-  }
-  body::before {
+  &::before {
     content:"";
     position: absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    width:100%;
-    min-height:100vh;
+    inset: 0;
     opacity:0.90;
-    z-index: -1;
+    z-index: 0;
     background-image: radial-gradient(100% 94%, black, #1d0050);
-   } */
-    `
-export default EstiloGlobal
+  }
+
+  >*{
+    position: relative;
+    z-index: 1;
+  }
+`
 
 export const Container = styled.div`
   width: 100%;

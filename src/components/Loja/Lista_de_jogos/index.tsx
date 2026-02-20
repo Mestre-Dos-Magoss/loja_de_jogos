@@ -1,19 +1,26 @@
-import Icones from '../../../styles/icones'
+import Game from '../../../models/jogo'
+import CardJogo from "../Card_jogo"
+
 import Paragrafo from "../../Paragrafo"
 import * as S from "./styles"
+import { ReactElement } from 'react'
 
-import CardJogo from "../Card_jogo"
-import { Props } from '../../../containers/Loja/index'
 
-const ListaDeJogos = ({ jogos }:Props) => {
+export type Props = {
+    jogos: Game[]
+    title: string
+    icon?: ReactElement
+    colorIcon?: string
+}
+const ListaDeJogos = ({ jogos, title, icon, colorIcon }:Props) => {
     return (
         <S.ContainerCards>
             <div>
                 <S.Secao>
-                    <S.IconeLaranja>
-                        {Icones.fogo}
-                    </S.IconeLaranja>
-                    <Paragrafo fontSize={16}>Ofertas Especiais</Paragrafo>
+                    <S.ColorIcon colorIcon={colorIcon}>
+                        {icon}
+                    </S.ColorIcon>
+                    <Paragrafo fontSize={16}>{title}</Paragrafo>
                 </S.Secao>
                 <S.ListContainer>
                     {jogos.length <= 0 ? (
@@ -22,91 +29,20 @@ const ListaDeJogos = ({ jogos }:Props) => {
                         <>
                             {jogos.map((jogo) => (
                                 <li key={jogo.id}>
-                                    <CardJogo jogo={{
-                                        name: jogo.name,
-                                        description: jogo.description,
-                                        image: jogo.image,
-                                        avaliationGame: jogo.avaliationGame,
-                                        realeaseDate: jogo.realeaseDate,
-                                        developmente: jogo.developmente,
-                                        tag: jogo.tag,
-                                        price: jogo.price,
-                                        newPrice: jogo.newPrice,
-                                        descontPrice: jogo.descontPrice,
-                                        id: jogo.id
-                                    }} />
+                                    <CardJogo
+                                     key={jogo.id}
+                                     name={jogo.name}
+                                     avaliationGame={jogo.avaliationGame}
+                                     image={jogo.image}
+                                     descontPrice={jogo.descontPrice}
+                                     price={jogo.price}
+                                     newPrice={jogo.newPrice}
+                                     tag={jogo.tag}
+                                     />
                                 </li>
                             ))}
                         </>
                     )}
-                </S.ListContainer>
-            </div>
-            <div>
-                <S.Secao>
-                    <S.IconeAzul>{Icones.relogio} </S.IconeAzul>
-                    <Paragrafo fontSize={16} tipo="Secundario">Lançamentos</Paragrafo>
-                </S.Secao>
-                <S.ListContainer>
-                    {jogos.map((jogo) => (
-                        <li key={jogo.id}>
-                            <CardJogo jogo={{
-                                name: jogo.name,
-                                description: jogo.description,
-                                image: jogo.image,
-                                avaliationGame: jogo.avaliationGame,
-                                realeaseDate: jogo.realeaseDate,
-                                developmente: jogo.developmente,
-                                tag: jogo.tag,
-                                price: jogo.price,
-                                newPrice: jogo.newPrice,
-                                descontPrice: jogo.descontPrice,
-                                id: jogo.id
-                            }} />
-                        </li>
-                    ))}
-                </S.ListContainer>
-            </div>
-            <div>
-                <S.Secao>
-                    <Paragrafo fontSize={16} tipo="Secundario">Todos os Jogos</Paragrafo>
-                </S.Secao>
-                <S.ListContainer>
-                    {jogos.map((jogo) => (
-                        <li key={jogo.id}>
-                            <CardJogo jogo={{
-                                name: jogo.name,
-                                description: jogo.description,
-                                image: jogo.image,
-                                avaliationGame: jogo.avaliationGame,
-                                realeaseDate: jogo.realeaseDate,
-                                developmente: jogo.developmente,
-                                tag: jogo.tag,
-                                price: jogo.price,
-                                newPrice: jogo.newPrice,
-                                descontPrice: jogo.descontPrice,
-                                id: jogo.id
-                            }} />
-                        </li>
-                    ))}
-                </S.ListContainer>
-                <S.ListContainer>
-                    {jogos.map((jogo) => (
-                        <li key={jogo.id}>
-                            <CardJogo jogo={{
-                                name: jogo.name,
-                                description: jogo.description,
-                                image: jogo.image,
-                                avaliationGame: jogo.avaliationGame,
-                                realeaseDate: jogo.realeaseDate,
-                                developmente: jogo.developmente,
-                                tag: jogo.tag,
-                                price: jogo.price,
-                                newPrice: jogo.newPrice,
-                                descontPrice: jogo.descontPrice,
-                                id: jogo.id
-                            }} />
-                        </li>
-                    ))}
                 </S.ListContainer>
             </div>
         </S.ContainerCards>

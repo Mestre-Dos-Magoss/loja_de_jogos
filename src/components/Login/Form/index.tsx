@@ -27,8 +27,8 @@ const Form = () => {
                 <S.Link>Esqueceu a senha? </S.Link>
             </S.FormCheckLabel>
         </div>
-            <S.ButtonForm>Entrar</S.ButtonForm>
-        </div>
+            <S.ButtonForm to={'/'}>Entrar</S.ButtonForm>
+        </div> 
     )
 }
 

@@ -8,10 +8,16 @@ import { P } from '../../Paragrafo/Paragrafo'
 import * as S from './styles'
 
 type Props = {
-    jogo: Game
+  name: string
+  image: string
+  avaliationGame: number
+  tag: string
+  price: number
+  newPrice: number
+  descontPrice: number
 }
 
-const CardJogo = ({ jogo }: Props) => {
+const CardJogo = ({ name, avaliationGame, descontPrice, image, newPrice, price, tag }: Props) => {
     const estaNaBiblioteca = false // somente para os testes
     return (
         <S.CardGame estaNaBiblioteca={estaNaBiblioteca}>
@@ -23,37 +29,37 @@ const CardJogo = ({ jogo }: Props) => {
                     <IconsContainer>
                         {Icones.coracao}
                     </IconsContainer>
-                        {jogo.descontPrice <=0 ? (
+                        {descontPrice <=0 ? (
                             ''
                         ) : ( 
                             <S.TagDescontoo>
-                                {jogo.descontPrice+'%'}
+                                {descontPrice+'%'}
                             </S.TagDescontoo> 
                         )}
                 </FavoritarContainer>
                 )}
-                <img src={jogo.image} alt="jogo" />
+                <img src={image} alt="jogo" />
             </S.CardIMG>
             <S.ContainerDescription>
-                <P as="h4" fontSize={14} marginBottom={4} >{ jogo.name }</P>
+                <P as="h4" fontSize={14} marginBottom={4} >{ name }</P>
                 {estaNaBiblioteca ? (
                 <S.AvaliacoesBiblioteca>
                     <S.avaliationsIcone>
                         {Icones.estrela}
-                        <P fontSize={16}>{jogo.avaliationGame}</P>
+                        <P fontSize={16}>{avaliationGame}</P>
                     </S.avaliationsIcone>
                     <Categoriaa>
-                        {jogo.tag}
+                        {tag}
                     </Categoriaa>
                 </S.AvaliacoesBiblioteca>
                 ) : (
                 <Avaliations>
                     <Categoriaa>
-                        {jogo.tag}
+                        {tag}
                     </Categoriaa>
                     <Avaliatioon>
                         {Icones.estrela}
-                        <P fontSize={16}>{jogo.avaliationGame}</P>
+                        <P fontSize={16}>{avaliationGame}</P>
                         
                     </Avaliatioon>
                 </Avaliations>
@@ -70,13 +76,13 @@ const CardJogo = ({ jogo }: Props) => {
                     ) : (
                     <>
                         <PriceAntigoo>
-                            R${jogo.price}
+                            R${price}
                         </PriceAntigoo>
-                        {jogo.descontPrice <= 0 ? (
+                        {descontPrice <= 0 ? (
                             ''
                         ) : (
                             <PriceNovo>
-                                R${jogo.newPrice}
+                                R${newPrice}
                             </PriceNovo>
                         )}
                     </>

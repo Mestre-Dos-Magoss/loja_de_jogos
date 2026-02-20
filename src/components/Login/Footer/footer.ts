@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as Links } from "react-router-dom";
 import variaveis from "../../../styles/variaveis";
 
 import { P } from "../../Paragrafo/Paragrafo";
@@ -39,7 +40,7 @@ export const ContainerText = styled.div`
   display:flex;
   justify-content:center;
 `
-export const Link = styled.a`
+export const Link = styled(Links)`
   margin-left:4px;
   font-weight: bold;
   font-size: 16px;
