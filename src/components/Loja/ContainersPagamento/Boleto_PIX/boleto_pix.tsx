@@ -10,6 +10,8 @@ type Props = {
 }
 
 const ContainerBoletoPIX = ({ tipoDePagamento }: Props) => {
+    const msgButton = tipoDePagamento === enums.FormasDePagamento.BOLETO ? 'código de barras' : 'chave PIX'
+
     return (
         <>
     <CampoContainer>
@@ -52,7 +54,8 @@ const ContainerBoletoPIX = ({ tipoDePagamento }: Props) => {
                     <span> 237933812860083013520010112553011748900002199 </span>
                 )}
             </S.ContainerPagamentoCodigo>
-            <S.ButtonCopiar>
+            <S.ButtonCopiar title={`Copiar ${msgButton}`}>
+                <>
                 {Icones.copiar}
             {tipoDePagamento === enums.FormasDePagamento.PIX ? (
                 <>
@@ -63,6 +66,7 @@ const ContainerBoletoPIX = ({ tipoDePagamento }: Props) => {
                   copiar código de barras
                 </>
             )}
+                </>
             </S.ButtonCopiar>
         </div>
             {tipoDePagamento === enums.FormasDePagamento.PIX ? (

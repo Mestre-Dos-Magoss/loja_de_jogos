@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import variaveis from "../../styles/variaveis";
-
-export const Button = styled.button`
+ 
+export const Botao = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

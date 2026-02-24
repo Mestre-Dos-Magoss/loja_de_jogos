@@ -1,7 +1,8 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import variaveis from './variaveis'
-import { Button } from '../components/Buttons/styles'
+import { Botao } from '../components/Buttons/styles'
 import { Props } from '../components/Loja/Carrinho/styles'
+import Button from '../components/Buttons'
 
 const EstiloGlobal = createGlobalStyle`
 * {
@@ -13,7 +14,7 @@ const EstiloGlobal = createGlobalStyle`
   list-style: none;
 }
 
-html, body, #root {
+html, body{
   height:100%;
 }
  `
@@ -89,13 +90,18 @@ export const ContainerImg = styled(ImgContainer)`
   }
 `
 
-export const IconsContainer = styled.div`
+export const BotaoAcao = styled(Button)`
   display:flex;
-  background-color: transparent;
-  transition: 0.2s;
+  width: 16%;
   padding: 8px 10px;
   border-radius: 6px;
+  background-color: transparent;
+  transition: 0.2s;
+  color: ${variaveis.corFundo};
 
+  svg{
+    width: 100%;
+  }
   &:hover {
     background-color: ${variaveis.corTextoSecundaria};
     transition: 0.2s;
@@ -201,7 +207,7 @@ export const CarrinhoHeader = styled.div`
 `
 
 export const CarrinhoProdutos = styled.div<Props>`
-  display: flex;
+  display:${props => props.temProdutos ? 'block' : 'flex'};
   flex-direction: column;
   align-items: center;
   justify-content: ${props => props.temProdutos ? 'start' : 'center'};
@@ -367,7 +373,7 @@ export const FavoritarContainer = styled.div`
   color: white;
   `
 
-    export const ButtonJogar = styled(Button)` 
+    export const ButtonJogar = styled(Botao)` 
     font-size: 14px;
     padding: 8px 16px;
     text-transform: capitalize;
@@ -383,7 +389,7 @@ export const FavoritarContainer = styled.div`
     }
   `
   
-export const ButtonsIcons = styled(Button)` // if selected should be white
+export const ButtonsIcons = styled(Botao)` // if selected should be white
   padding: 8px 8px;
   background-color: ${variaveis.corTextoSecundaria};
   border-radius: 8px;

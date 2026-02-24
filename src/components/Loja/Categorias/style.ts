@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Button } from "../../Buttons/styles";
+import { Botao } from "../../Buttons/styles";
 import { Props } from '../Header/index'
 
 import variaveis from "../../../styles/variaveis";
@@ -27,7 +27,7 @@ export const Categoria = styled.div`
   width:640px;
 `
 
-export const ButtonsCategoria = styled(Button)<Props>`
+export const ButtonsCategoria = styled(Botao)<Props>`
   background-color: ${props => props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria};
   color:${variaveis.corFundo};
   border-radius:8px;

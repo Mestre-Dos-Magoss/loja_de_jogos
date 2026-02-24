@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
+import { useNavigate } from 'react-router-dom'
 
-import CardCompras from '../../components/Loja/Card_compras'
 import OpcoesPagamento from '../../components/Loja/OpcoesPagamento'
 import ContainerBoletoPIX from '../../components/Loja/ContainersPagamento/Boleto_PIX/boleto_pix'
 import ContainerCartao from '../../components/Loja/ContainersPagamento/Cartao'
+import CardCompras from '../../components/Loja/Card_compras'
 import * as enums from '../../utils/enuns/formasDePagamento'
 
 import Icones from '../../styles/icones'
@@ -12,6 +15,23 @@ import { ButtonCarrinho, Campo, CampoContainer, CarrinhoProdutos, MensagemPagame
 import * as S from './styles'
 
 const AreaPagamento = () => {
+    const itens = useSelector((state: RootState) => state.shoppingCart.itens)
+    const navigate = useNavigate()
+    const subTotal = (): number => {
+        return itens.reduce((total, item) => {
+            const preco = Number(item.newPrice) || Number(item.price)
+            return Math.ceil(total + preco)
+        },0)
+    }
+    const impostos = (valor:number): number => {
+        return itens.reduce((total, item) => {
+            const imposto = valor
+            return total +  imposto
+        },0)
+    }
+    const imposto = 3.50
+    const total = subTotal() + impostos(imposto)
+
     const [pagamentoSelecionado, setPagamentoSelecionado] = useState(enums.FormasDePagamento.PIX)
     const FormasPagamento = [
         {
@@ -47,7 +67,20 @@ const AreaPagamento = () => {
                     </P>
                     </S.Aviso>
                 <S.ContainerRevisar>
-                    <CardCompras /> {/* será passadas as props*/}
+                    {itens.map((j) => (
+                        <li>
+                            <CardCompras 
+                            size='big'
+                            key={j.id}
+                            description={j.description}
+                            id={j.id}
+                            image={j.image}
+                            name={j.name}
+                            newPrice={j.newPrice}
+                            price={j.price}
+                            tag={j.tag}/>
+                        </li>
+                    ))}
                 </S.ContainerRevisar>
             </div>
             <S.Pagamento>
@@ -57,21 +90,21 @@ const AreaPagamento = () => {
                         <P as="p" fontSize={14} >voltar ao carrinho</P> 
                     </PagamentoHeaderItem>
                 </S.PagamentoHeader>
-                <CarrinhoProdutos temProdutos>
+                <CarrinhoProdutos temProdutos={true}>
                     <p>Resumo do Pedido</p>
                     <S.ResumoPedido>
                         <S.ResumoPedidoItem>
-                            <span>Itens (1)</span>
-                            <span>R$ 20.00</span>
+                            <span>Itens ({itens.length})</span>
+                            <span>R$ {subTotal()}</span>
                         </S.ResumoPedidoItem>
                         <S.ResumoPedidoItem>
                             <span> Impostos </span>
-                            <span> R$ 2.00 </span>
+                            <span> R$ {imposto} </span>
                         </S.ResumoPedidoItem>
                         <S.DLine />
                         <S.ResumoPedidoItem>
                             <span> Total </span>
-                            <span> R$ 21.99 </span>  
+                            <span> R$ {total} </span>  
                         </S.ResumoPedidoItem>
                     </S.ResumoPedido>
                     <div>
@@ -101,7 +134,7 @@ const AreaPagamento = () => {
                     </S.InfomaoesPagamento>
                 </CarrinhoProdutos>
                 <S.PagamentoFooter temProdutos>
-                    <ButtonCarrinho>
+                    <ButtonCarrinho title='Finalizar comprar' action={() => navigate('/library')}>
                         {paymentText()}
                     </ButtonCarrinho> {/*botao irá mudar a depender da opção escolhida */}
                 </S.PagamentoFooter>

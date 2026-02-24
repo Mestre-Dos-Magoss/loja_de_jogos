@@ -29,6 +29,8 @@ export const PagamentoHeader = styled(CarrinhoHeader)`
 `
 
 export const ResumoPedido = styled.div`
+display: block;
+margin: 0 auto;;
   max-width: 380px;
   width: 100%;
   padding: 16px;
@@ -69,7 +71,7 @@ export const PagamentoFooter = styled(CarrinhoFooter)`
   height: 60px;
 `
 
-export const ContainerRevisar = styled.div`
+export const ContainerRevisar = styled.ul`
   display: block;
   margin: 0 auto;
   max-width: 900px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import variaveis from "../../../styles/variaveis";
-import { Button } from '../../Buttons/styles'
-import { PriceNovo, TagDesconto } from "../../../styles";
+import { Botao } from '../../Buttons/styles'
+import { BotaoAcao, PriceNovo, TagDesconto } from "../../../styles";
 import {Props} from './index'
 
 export const PopUpContainer = styled.div<Props>`
@@ -41,6 +41,11 @@ export const PopUpDescription = styled.div`
 export const Icones = styled.div`
   display:flex;
   align-items: center;
+
+  ${BotaoAcao}{
+    width: 100%;
+    color:${variaveis.corFundo};
+  }
 `
 
 export const PopUpsText = styled.div`
@@ -95,7 +100,7 @@ export const TagDescontoo = styled(TagDesconto)`
   padding: 4px 16px;
 `
 
-export const ButtonAction = styled(Button)`
+export const ButtonAction = styled(Botao)`
   display:flex;
   align-items: center;
   padding-left: 16px;

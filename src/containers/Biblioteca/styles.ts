@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import variaveis from "../../styles/variaveis";
-import { Button } from "../../components/Buttons/styles";
+import { Botao } from "../../components/Buttons/styles";
 
 export const BibliotecaCheia = styled.div`
   width: 100%;
@@ -46,7 +46,7 @@ export const ContainerBotoes = styled.div`
   }
 `
 
-export const ButtonsText = styled(Button)`
+export const ButtonsText = styled(Botao)`
   padding: 6px 16px;
   font-size: 16px;
   text-transform: capitalize;

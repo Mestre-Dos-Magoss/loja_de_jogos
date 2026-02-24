@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import variaveis from "../../../styles/variaveis";
 import {Props as View} from './index'
+import variaveis from "../../../styles/variaveis";
+
 export type Props = {
   temProdutos: boolean;
 }
@@ -44,32 +45,4 @@ export const CarrinhoContainer = styled.div<View>`
   height: 100vh;
   border: 1px solid aliceblue;
   background-color: ${variaveis.corPrincipal};
-`
-
-export const CarrinhoComProduto = styled.div`
-  display: flex;
-  column-gap: 1em;
-  padding: 12px;
-  width: 100%;
-  height: 106px;
-  border: 1px solid ${variaveis.corTextoSecundaria};
-  border-radius: 8px;
-  margin-bottom: 16px;
-
-  img {
-    width: 80px;
-    height: 80px;
-    border-radius: 4px;
-  }
-  `
-
-export const ExcluirGame = styled.div`
-  padding: 4px;
-  border-radius: 4px;
-
-  svg {
-    width: 16px;
-    height: 16px;
-    color: ${variaveis.corTag};
-  }
 `

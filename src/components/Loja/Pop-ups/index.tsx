@@ -1,4 +1,4 @@
-import { ActionContainer, Avaliatioon, Categoriaa, FavoritarContainer, IconsContainer, Line, PriceAntigo, TagDesconto } from '../../../styles'
+import { ActionContainer, Avaliatioon, BotaoAcao, Categoriaa, FavoritarContainer, Line, PriceAntigo, TagDesconto } from '../../../styles'
 import Paragrafo from '../../Paragrafo'
 import { P } from '../../Paragrafo/Paragrafo'
 import * as S from './styles'
@@ -17,12 +17,12 @@ const PopUps = ({ viewPopUp }:Props) => {
                         - 21% off
                     </TagDesconto>
                     <S.Icones>
-                        <IconsContainer>
+                        <BotaoAcao title='Favoritar Game'>
                             {Icones.coracao}
-                        </IconsContainer>
-                        <IconsContainer>
+                        </BotaoAcao>
+                        <BotaoAcao title='Fechar Janela'>
                             {Icones.X}
-                        </IconsContainer>
+                        </BotaoAcao>
                     </S.Icones>
                 </FavoritarContainer>
                 <img src='https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f' alt="game-image"/>

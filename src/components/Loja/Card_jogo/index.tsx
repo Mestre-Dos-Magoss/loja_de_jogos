@@ -1,24 +1,47 @@
-import Game from '../../../models/jogo'
-import { DLine } from '../../../containers/AreaPagamento/styles'
+import { useDispatch } from 'react-redux'
+import { add } from '../../../store/reducers/shoppingCart'
 
-import Icones from '../../../styles/icones'
-import { Avaliations, Avaliatioon, Categoriaa, ContainerPrices, IconsContainer, PriceNovo, PriceAntigoo, ActionContainer, FavoritarContainer, ButtonJogar } from '../../../styles/index'
 import Paragrafo from '../../Paragrafo'
+import Icones from '../../../styles/icones'
+import { Avaliations, Avaliatioon, Categoriaa, ContainerPrices, BotaoAcao, PriceNovo, PriceAntigoo, ActionContainer, FavoritarContainer, ButtonJogar } from '../../../styles/index'
+import { DLine } from '../../../containers/AreaPagamento/styles'
 import { P } from '../../Paragrafo/Paragrafo'
 import * as S from './styles'
+import Game from '../../../models/jogo'
 
-type Props = {
-  name: string
-  image: string
-  avaliationGame: number
-  tag: string
-  price: number
-  newPrice: number
-  descontPrice: number
+type Props = Game
+
+type FavoritarGames = {
+    id:number
+    name:string,
+    avaliationGame:number,
+    descontPrice:number,
+    image:string,
+    price:number,
+    newPrice: number,
+    tag: string
 }
 
-const CardJogo = ({ name, avaliationGame, descontPrice, image, newPrice, price, tag }: Props) => {
+const CardJogo = ({ id, name, avaliationGame, descontPrice, image, newPrice, price, tag, description, developmente, realeaseDate }: Props) => {
     const estaNaBiblioteca = false // somente para os testes
+    const dispatch = useDispatch()
+
+    const adicionarGame = () => {
+        dispatch(add({
+            id, name, image, price, newPrice, avaliationGame, descontPrice,
+            description, developmente, realeaseDate, tag
+        }))
+    }
+
+    const favoritarGame = ({ id, name, avaliationGame, descontPrice, image, price, newPrice, tag }: FavoritarGames) => {
+        const key = id
+        const GameObject = {
+          id, name, avaliationGame, descontPrice, image, price, newPrice, tag
+        }
+
+       console.log(localStorage.setItem(JSON.stringify(key), JSON.stringify(GameObject)))
+      }
+
     return (
         <S.CardGame estaNaBiblioteca={estaNaBiblioteca}>
             <S.CardIMG>
@@ -26,9 +49,9 @@ const CardJogo = ({ name, avaliationGame, descontPrice, image, newPrice, price, 
                     ''
                 ) : (
                 <FavoritarContainer>
-                    <IconsContainer>
+                    <BotaoAcao title='Favoritar game' action={() => favoritarGame({id, name, avaliationGame, descontPrice, image, price, newPrice, tag})}>
                         {Icones.coracao}
-                    </IconsContainer>
+                    </BotaoAcao>
                         {descontPrice <=0 ? (
                             ''
                         ) : ( 
@@ -91,7 +114,7 @@ const CardJogo = ({ name, avaliationGame, descontPrice, image, newPrice, price, 
                 {estaNaBiblioteca ? (
                     ''
                 ) : (
-                    <S.ButtonCart type='submit'> 
+                    <S.ButtonCart title='Adicionar ao carrinho' action={adicionarGame}> 
                         {Icones.carrinho}
                     </S.ButtonCart>
                 )}
@@ -101,7 +124,7 @@ const CardJogo = ({ name, avaliationGame, descontPrice, image, newPrice, price, 
                 )}
                 {estaNaBiblioteca && (
                     <S.Jogar>
-                        <ButtonJogar>
+                        <ButtonJogar title='Iniciar Game'>
                             {Icones.pause}
                             jogar agora
                         </ButtonJogar>

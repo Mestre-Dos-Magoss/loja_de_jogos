@@ -87,6 +87,10 @@ const Bibilioteca = ({ jogo }: Props) => {
                                 newPrice={jogo.newPrice}
                                 price={jogo.price}
                                 tag={jogo.tag}
+                                description={jogo.description}
+                                developmente={jogo.developmente}
+                                realeaseDate={jogo.realeaseDate}
+                                id={jogo.id}
                                 />
                             </li>
                           )

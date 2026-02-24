@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Container, ContainerPrices } from "../../../styles";
 import variaveis from "../../../styles/variaveis";
-import { Button } from "../../Buttons/styles";
+import { Botao } from "../../Buttons/styles";
 import { Props } from "../Header";
 
 export const Carrousel = styled(Container)`
@@ -35,7 +35,7 @@ export const ButtonsContainer = styled(ContainerPrices)`
   width:400px;
 `
 
-export const Button1 = styled(Button)`
+export const Button1 = styled(Botao)`
   width:30%;
   margin-right: 12px;
   font-weight:normal;
@@ -49,7 +49,7 @@ export const Button1 = styled(Button)`
       font-weight: 400px;
   }
 `
-export const Button2 = styled(Button)`
+export const Button2 = styled(Botao)`
   width: 50%;
   padding: 12px 0;
   font-weight:normal;

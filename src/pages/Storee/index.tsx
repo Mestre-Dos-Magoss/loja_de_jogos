@@ -11,7 +11,7 @@ const Store = ({ jogo}:Props) => (
   <>
     <Loja jogos={jogo} />
     <PopUps viewPopUp={false} />
-    <Carrinho viewShopping={false}/>
+    <Carrinho viewShopping={true}/>
   </>
 )
 

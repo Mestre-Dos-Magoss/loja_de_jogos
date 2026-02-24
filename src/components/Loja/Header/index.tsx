@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Icones from '../../../styles/icones'
-import { ContainerImg, IconsContainer, LogoContainer } from '../../../styles/index'
+import { ContainerImg, BotaoAcao, LogoContainer } from '../../../styles/index'
 import * as S from './styles'
 
 export type Props = {
@@ -9,7 +9,6 @@ export type Props = {
 
 const HeaderLoja = ({ Active }: Props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false) //apenas para testar o comportamento
-    
     return (
         <S.Header>
             <S.FormContainer>
@@ -34,9 +33,9 @@ const HeaderLoja = ({ Active }: Props) => {
                         <S.Search type="search" placeholder="Buscar jogos..." />
                     </S.SearchContainer>
                 <S.FormContainerComponents>
-                    <IconsContainer>
+                    <BotaoAcao title='Trocar tema'>
                         {Icones.sol}
-                    </IconsContainer>
+                    </BotaoAcao>
                     <S.IsSelected onClick={() => setIsLoggedIn(!isLoggedIn)}>
                             {Icones.pessoa}
                         Juliano
@@ -47,12 +46,12 @@ const HeaderLoja = ({ Active }: Props) => {
                             sair
                         </S.PopUpSair>
                     </S.IsSelected>
-                    <IconsContainer>
+                    <BotaoAcao title='Favoritos'>
                         {Icones.coracao}
-                    </IconsContainer>
-                    <IconsContainer>
+                    </BotaoAcao>
+                    <BotaoAcao title='Ir ao carrinho'>
                             {Icones.carrinho}
-                    </IconsContainer>
+                    </BotaoAcao>
                 </S.FormContainerComponents>
             </S.FormContainer>
         </S.Header>

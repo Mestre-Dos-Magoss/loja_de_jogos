@@ -13,7 +13,7 @@ type Props = {
     jogo: Game[]
 }
 
-const Rotas = ({jogo}: Props) => (
+const AppRoutes = ({jogo}: Props) => (
     <Routes>
         <Route element={<LayoutAuth />}>
             <Route path='/login' element={<Loginn/>}/>
@@ -22,9 +22,11 @@ const Rotas = ({jogo}: Props) => (
         <Route element={<LayoutMain />}>
             <Route path='/' element={<Storee jogo={jogo}/>}/>
             <Route path='/library' element={<Library jogo={jogo}/>}/>
+        </Route>
+        <Route>
             <Route path='/pay' element={<AreaPagamento />}/>
         </Route>
     </Routes>
 )
 
-export default Rotas
+export default AppRoutes

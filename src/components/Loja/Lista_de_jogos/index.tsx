@@ -38,6 +38,10 @@ const ListaDeJogos = ({ jogos, title, icon, colorIcon }:Props) => {
                                      price={jogo.price}
                                      newPrice={jogo.newPrice}
                                      tag={jogo.tag}
+                                     description={jogo.description}
+                                     developmente={jogo.developmente}
+                                     realeaseDate={jogo.realeaseDate}
+                                     id={jogo.id}
                                      />
                                 </li>
                             ))}

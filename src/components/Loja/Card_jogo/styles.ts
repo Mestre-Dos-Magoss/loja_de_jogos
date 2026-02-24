@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import Button from "../../Buttons";
 import { Avaliatioon, TagDesconto } from "../../../styles";
 import variaveis from "../../../styles/variaveis";
-import { Button } from "../../Buttons/styles";
 
 type Props = {
   estaNaBiblioteca: boolean;

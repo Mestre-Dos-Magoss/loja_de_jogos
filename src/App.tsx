@@ -1,6 +1,8 @@
+import { Provider } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import Rotas from './routes';
+import AppRoutes from './AppRoutes';
+import store from './store/index'
 import Game from './models/jogo';
 
 import EstiloGlobal from './styles';
@@ -24,11 +26,13 @@ function App() {
   }
   carregarDados()
   },[jogo])
-  
+
   return (
     <BrowserRouter>
       <EstiloGlobal />
-      <Rotas jogo={jogo} />
+      <Provider store={store}>
+        <AppRoutes jogo={jogo} />
+      </Provider>
     </BrowserRouter>
   );
 }
