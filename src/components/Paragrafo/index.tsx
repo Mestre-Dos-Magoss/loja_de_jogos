@@ -1,13 +1,15 @@
 import * as S from './Paragrafo'
 export type Props = {
-    children: string | number;
-    fontSize:number;
-    marginBottom?: number;
-    tipo?: 'Principal' | 'Secundario';
+  children: string | number
+  fontSize: number
+  marginBottom?: number
+  tipo?: 'Principal' | 'Secundario'
 }
 
-const Paragrafo = ({ fontSize, tipo, children, marginBottom }:Props) => (
-    <S.P tipo={tipo} fontSize={fontSize} marginBottom={marginBottom}>{children}</S.P>
+const Paragrafo = ({ fontSize, tipo, children, marginBottom }: Props) => (
+  <S.P tipo={tipo} fontSize={fontSize} marginBottom={marginBottom}>
+    {children}
+  </S.P>
 )
 
-export default Paragrafo;
+export default Paragrafo

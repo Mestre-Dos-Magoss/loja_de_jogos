@@ -1,17 +1,12 @@
-import Carrinho from "../../components/Loja/Carrinho"
-import PopUps from "../../components/Loja/Pop-ups"
-import Loja from "../../containers/Loja"
-import Game from "../../models/jogo"
+import Carrinho from '../../components/Loja/Carrinho'
+import PopUps from '../../components/Loja/Pop-ups'
+import Loja from '../../containers/Loja'
 
-type Props = {
-    jogo: Game[],
-}
-
-const Store = ({ jogo}:Props) => (
+const Store = () => (
   <>
-    <Loja jogos={jogo} />
+    <Loja />
     <PopUps viewPopUp={false} />
-    <Carrinho viewShopping={true}/>
+    <Carrinho viewShopping={true} />
   </>
 )
 

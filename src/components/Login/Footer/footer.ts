@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import { Link as Links } from "react-router-dom";
-import variaveis from "../../../styles/variaveis";
+import styled from 'styled-components'
+import { Link as Links } from 'react-router-dom'
+import variaveis from '../../../styles/variaveis'
 
-import { P } from "../../Paragrafo/Paragrafo";
+import { P } from '../../Paragrafo/Paragrafo'
 
 export const ParagrafoFooter = styled(P)`
- text-transform: uppercase;
- text-decoration:underline;
+  text-transform: uppercase;
+  text-decoration: underline;
 `
 
 export const Footer = styled.div`
@@ -15,7 +15,7 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: center;
 `
- 
+
 export const Redes = styled.div`
   display: flex;
   justify-content: center;
@@ -33,16 +33,16 @@ export const Button = styled.button`
   font-weight: bold;
   padding: 8px 48px;
   margin-right: 12px;
-  cursor:pointer;
+  cursor: pointer;
 `
 
 export const ContainerText = styled.div`
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 `
 export const Link = styled(Links)`
-  margin-left:4px;
+  margin-left: 4px;
   font-weight: bold;
   font-size: 16px;
-  color:${variaveis.corLink}
+  color: ${variaveis.corLink};
 `

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import variaveis from "../../../styles/variaveis";
+import styled from 'styled-components'
+import variaveis from '../../../styles/variaveis'
 
-type Props ={
-  color: string;
+type Props = {
+  color: string
 }
 
 export const Card = styled.div`
@@ -33,6 +33,6 @@ export const Img = styled.div<Props>`
   width: 100%;
   height: 48px;
   border-radius: 12px;
-  background-color:${({color}) => `${color}30`};
-  color: ${props => props.color};
+  background-color: ${({ color }) => `${color}30`};
+  color: ${(props) => props.color};
 `

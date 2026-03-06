@@ -1,12 +1,12 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Game from "../../models/jogo";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import Game from '../../models/jogo'
 
 type LibraryState = {
-    itens: Game[]
+  itens: Game[]
 }
 
 const initialState: LibraryState = {
-    itens:[]
+  itens: []
 }
 
 const librarySlice = createSlice({
@@ -14,7 +14,7 @@ const librarySlice = createSlice({
   initialState,
   reducers: {
     addGames: (state, action: PayloadAction<Game>) => {
-        state.itens.push(action.payload)
+      state.itens.push(action.payload)
     }
   }
 })

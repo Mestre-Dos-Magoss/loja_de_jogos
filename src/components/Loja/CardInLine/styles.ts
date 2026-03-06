@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import variaveis from "../../../styles/variaveis";
-import { ActionContainer, Avaliatioon } from "../../../styles";
+import styled from 'styled-components'
+import variaveis from '../../../styles/variaveis'
+import { ActionContainer, Avaliatioon } from '../../../styles'
 
 export const CardInLine = styled.div`
   display: flex;
@@ -12,20 +12,19 @@ export const CardInLine = styled.div`
   border: 1.4px solid ${variaveis.corTextoSecundaria};
   border-radius: 16px;
   background-color: ${variaveis.cinzaFraco};
-    transition: all ease 0.1s;
-    
+  transition: all ease 0.1s;
+
   &:hover {
     transition: all ease 0.1s;
     border: 1.4px solid ${variaveis.corBotao};
   }
-
 `
 
 export const ImgGame = styled.div`
   max-width: 192px;
   width: 100%;
   height: 100%;
-  border:none;
+  border: none;
   border-radius: 4px;
   overflow: hidden;
 
@@ -49,7 +48,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   button {
     text-transform: capitalize;
     margin-right: 12px;
@@ -61,14 +60,14 @@ export const ButtonsContainer = styled.div`
 `
 
 export const Avaliacao = styled(Avaliatioon)`
-  svg{
+  svg {
     height: 18px;
     width: 18px;
   }
 `
 
 export const AvaliacaoTemp = styled(Avaliacao)`
-  svg{
+  svg {
     color: ${variaveis.corFundo};
   }
 `

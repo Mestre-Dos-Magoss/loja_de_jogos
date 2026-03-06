@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import variaveis from "../../styles/variaveis";
-import { Botao } from "../../components/Buttons/styles";
+import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
+import { Botao } from '../../components/Buttons/styles'
 
 export const BibliotecaCheia = styled.div`
   width: 100%;
@@ -8,20 +8,20 @@ export const BibliotecaCheia = styled.div`
 `
 
 export const Title = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
   margin-bottom: 32px;
   text-transform: capitalize;
-  
-  p{
-    color: ${variaveis.corFundo}
+
+  p {
+    color: ${variaveis.corFundo};
   }
 
-  svg{
-    width:32px;
+  svg {
+    width: 32px;
     height: 32px;
     margin-right: 16px;
-    color:${variaveis.corBotao};
+    color: ${variaveis.corBotao};
   }
 `
 
@@ -38,7 +38,7 @@ export const ContainerBotoes = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom:2em;
+  margin-bottom: 2em;
 
   div {
     display: flex;
@@ -53,7 +53,7 @@ export const ButtonsText = styled(Botao)`
   font-weight: 600;
   border-radius: 8px;
   background-color: ${variaveis.corTextoSecundaria}; //if select should be purple
-  color:${variaveis.corFundo};
+  color: ${variaveis.corFundo};
 
   svg {
     margin-top: 2px;

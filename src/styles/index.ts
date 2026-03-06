@@ -21,25 +21,25 @@ html, body{
 export default EstiloGlobal
 
 export const ContainerCadastro = styled.div`
-  position:relative;
-  width:100%;
+  position: relative;
+  width: 100%;
   min-height: 100vh;
-  background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&q=80');
-  background-size:cover;
+  background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&q=80');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 24px;
-  
+
   &::before {
-    content:"";
+    content: '';
     position: absolute;
     inset: 0;
-    opacity:0.90;
+    opacity: 0.9;
     z-index: 0;
     background-image: radial-gradient(100% 94%, black, #1d0050);
   }
 
-  >*{
+  > * {
     position: relative;
     z-index: 1;
   }
@@ -48,50 +48,54 @@ export const ContainerCadastro = styled.div`
 export const Container = styled.div`
   width: 100%;
   max-width: 1280px;
-  display:flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
 `
 export const ImgContainer = styled.div`
-  display:flex;
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
   max-width: 68px;
-  width:100%;
-  padding:16px 0;
-  border-radius:16px;
-  margin-bottom:24px;
-  background-image: linear-gradient(322deg,  ${variaveis.corDegrade1} ,${variaveis.corDegrade2});
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  background-image: linear-gradient(
+    322deg,
+    ${variaveis.corDegrade1},
+    ${variaveis.corDegrade2}
+  );
 
-  svg{
-      color:white;
-      width:36px;
-      height: 36px;
+  svg {
+    color: white;
+    width: 36px;
+    height: 36px;
   }
 `
 
 export const LogoContainer = styled.div`
   display: flex;
-  align-items:center;
+  align-items: center;
   font-size: 16px;
   margin-right: 32px;
-  `
+`
 
 export const ContainerImg = styled(ImgContainer)`
   max-width: 36px;
-  padding:6px 6px;
-  border-radius:6px;
-  margin-right:8px;
+  padding: 6px 6px;
+  border-radius: 6px;
+  margin-right: 8px;
   margin-bottom: 0;
-  
-      svg{
-      width:22px;
-      height: 22px;
+
+  svg {
+    width: 22px;
+    height: 22px;
   }
 `
 
 export const BotaoAcao = styled(Button)`
-  display:flex;
+  display: flex;
   width: 16%;
   padding: 8px 10px;
   border-radius: 6px;
@@ -99,7 +103,7 @@ export const BotaoAcao = styled(Button)`
   transition: 0.2s;
   color: ${variaveis.corFundo};
 
-  svg{
+  svg {
     width: 100%;
   }
   &:hover {
@@ -108,65 +112,65 @@ export const BotaoAcao = styled(Button)`
   }
 `
 export const TagDesconto = styled.div`
-  display:flex;
+  display: flex;
   justify-content: center;
   max-width: 72px;
-  width: 100%; 
-  padding:6px 0;
+  width: 100%;
+  padding: 6px 0;
   font-size: 12px;
-  margin-bottom:1em;
+  margin-bottom: 1em;
   border-radius: 8px;
-  background-color:${variaveis.corTag};
-  color:black;
+  background-color: ${variaveis.corTag};
+  color: black;
 `
 
 export const Categoria = styled(TagDesconto)`
   padding: 4px 32px;
   background-color: transparent;
-  color:${variaveis.corPrincipal};
+  color: ${variaveis.corPrincipal};
   border: 1px solid #c5e4e8ff;
 `
 
 export const Avaliation = styled.div`
-  color:${variaveis.corPrincipal};
-  svg{
-    color:orange;
+  color: ${variaveis.corPrincipal};
+  svg {
+    color: orange;
     margin-right: 4px;
-    width:20px;
+    width: 20px;
     height: 20px;
   }
 `
 
 export const PriceNovo = styled.span`
-  color:#03c903;
+  color: #03c903;
 `
 
 export const PriceAntigo = styled(PriceNovo)`
   color: ${variaveis.corTextoSecundaria};
-  text-decoration:line-through;
-  margin-right:10px;
+  text-decoration: line-through;
+  margin-right: 10px;
 `
 
 export const Avaliations = styled.div`
-  display:flex;
-  width:25%;
+  display: flex;
+  width: 25%;
   margin-bottom: 1em;
   justify-content: space-evenly;
 `
 
 export const ContainerPrices = styled.div`
-  display:flex;
-  width:35%;
+  display: flex;
+  width: 35%;
   margin-bottom: 1em;
-  color:${variaveis.corPrincipal};
+  color: ${variaveis.corPrincipal};
 `
 
 export const Avaliatioon = styled(Avaliation)`
-  display:flex;
+  display: flex;
   align-items: center;
-  font-size:12px;
-  margin-left:8px;
-  color:black;
+  font-size: 12px;
+  margin-left: 8px;
+  color: black;
 
   svg {
     width: 12px;
@@ -185,9 +189,9 @@ export const Line = styled.div`
   height: 2px;
   background-color: #e4e7e8;
   margin-bottom: 2em;
-  `
+`
 
-  export const PriceAntigoo = styled(PriceAntigo)`
+export const PriceAntigoo = styled(PriceAntigo)`
   font-size: 14px;
   color: ${variaveis.corFundo};
 `
@@ -207,10 +211,10 @@ export const CarrinhoHeader = styled.div`
 `
 
 export const CarrinhoProdutos = styled.div<Props>`
-  display:${props => props.temProdutos ? 'block' : 'flex'};
+  display: ${(props) => (props.temProdutos ? 'block' : 'flex')};
   flex-direction: column;
   align-items: center;
-  justify-content: ${props => props.temProdutos ? 'start' : 'center'};
+  justify-content: ${(props) => (props.temProdutos ? 'start' : 'center')};
   max-width: 100%;
   max-height: 100vh;
   min-height: 100vh;
@@ -239,10 +243,14 @@ export const ButtonCarrinho = styled(Button)`
   font-size: 14px;
   font-weight: normal;
   text-transform: capitalize;
-  background-image:linear-gradient(266deg, ${variaveis.corDegrade1},${variaveis.corDegrade2});
+  background-image: linear-gradient(
+    266deg,
+    ${variaveis.corDegrade1},
+    ${variaveis.corDegrade2}
+  );
   color: ${variaveis.corFundo};
 
-    svg {
+  svg {
     width: 16px;
     height: 16px;
     margin-right: 8px;
@@ -250,7 +258,7 @@ export const ButtonCarrinho = styled(Button)`
 `
 
 export const CarrinhoFooter = styled.div<Props>`
-  display: ${props => props.temProdutos ? 'block' : 'none'};
+  display: ${(props) => (props.temProdutos ? 'block' : 'none')};
   position: sticky;
   bottom: 0;
   width: 100%;
@@ -264,14 +272,15 @@ export const InfosGame = styled.div`
   display: block;
   width: 100%;
   text-align: start;
-  
-  h6, p {
+
+  h6,
+  p {
     color: ${variaveis.corFundo};
     margin-bottom: 0.6em;
-   }
-  `
+  }
+`
 
-  export const CampoContainer = styled.div`
+export const CampoContainer = styled.div`
   width: 100%;
   display: block;
   font-size: 14px;
@@ -288,7 +297,7 @@ export const Campo = styled.input`
   padding: 8px 16px;
   border: 2px solid #cad5e2;
   border-radius: 8px;
-  margin-top: 4px; 
+  margin-top: 4px;
   background-color: ${variaveis.cinzaFraco};
 `
 
@@ -325,7 +334,7 @@ export const PagamentoHeaderItemVariante = styled(PagamentoHeaderItem)`
 `
 
 export const ContainerPagamentoCinza = styled(ContainerPagamento)`
-  background-color:#e2e8f0;
+  background-color: #e2e8f0;
   border: 1px solid ${variaveis.cinzaFraco};
 
   svg {
@@ -346,9 +355,9 @@ export const MensagemPagamento = styled.div`
   margin-top: 16px;
   margin-bottom: 1em;
   border: 1px solid ${variaveis.corBotaoEfeito};
-  border-radius:12px;
-  background-color: rgba(173,70,255,0.1);
-  color:${variaveis.corBotaoEfeito};
+  border-radius: 12px;
+  background-color: rgba(173, 70, 255, 0.1);
+  color: ${variaveis.corBotaoEfeito};
 
   svg {
     width: 24px;
@@ -361,7 +370,7 @@ export const MensagemPagamento = styled.div`
 export const ActionContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 `
 
 export const FavoritarContainer = styled.div`
@@ -371,33 +380,34 @@ export const FavoritarContainer = styled.div`
   justify-content: space-between;
   padding: 8px 8px;
   color: white;
-  `
+`
 
-    export const ButtonJogar = styled(Botao)` 
-    font-size: 14px;
-    padding: 8px 16px;
-    text-transform: capitalize;
-    background-color: ${variaveis.corBotao};
+export const ButtonJogar = styled(Botao)`
+  font-size: 14px;
+  padding: 8px 16px;
+  text-transform: capitalize;
+  background-color: ${variaveis.corBotao};
+  color: ${variaveis.corFundo};
+  border-radius: 8px;
+
+  svg {
+    width: 16px;
+    height: 16px;
     color: ${variaveis.corFundo};
-    border-radius: 8px;
+    margin-right: 16px;
+  }
+`
 
-    svg {
-      width: 16px;
-      height: 16px;
-      color: ${variaveis.corFundo};
-      margin-right: 16px;
-    }
-  `
-  
-export const ButtonsIcons = styled(Botao)` // if selected should be white
+export const ButtonsIcons = styled(Botao)`
+  // if selected should be white
   padding: 8px 8px;
   background-color: ${variaveis.corTextoSecundaria};
   border-radius: 8px;
   color: ${variaveis.corFundo};
 
-svg {
-  width: 20px;
-  height: 20px;
-  color:${variaveis.corFundo};
-}
+  svg {
+    width: 20px;
+    height: 20px;
+    color: ${variaveis.corFundo};
+  }
 `

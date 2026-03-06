@@ -1,10 +1,14 @@
-import styled from "styled-components";
-import { ButtonCarrinho, ContainerPagamentoCinza, MensagemPagamento } from "../../../../styles";
-import variaveis from "../../../../styles/variaveis";
+import styled from 'styled-components'
+import {
+  ButtonCarrinho,
+  ContainerPagamentoCinza,
+  MensagemPagamento
+} from '../../../../styles'
+import variaveis from '../../../../styles/variaveis'
 
 export const ContainerPagamentoCodigo = styled(ContainerPagamentoCinza)`
   display: block;
-  padding:12px;
+  padding: 12px;
 
   span {
     font-size: 12px;
@@ -16,7 +20,7 @@ export const MensagemBoleto = styled(MensagemPagamento)`
   text-align: center;
   border-color: #8ec5ff;
   background-color: #dbeafe;
-  color:#1447e6;
+  color: #1447e6;
 
   strong {
     margin-right: 4px;

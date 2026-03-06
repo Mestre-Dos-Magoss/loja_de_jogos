@@ -1,7 +1,5 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
 
-const LayoutAuth = () => (
-    <Outlet />
-)
+const LayoutAuth = () => <Outlet />
 
 export default LayoutAuth

@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { CarrinhoFooter, CarrinhoHeader, Line } from "../../styles";
-import variaveis from "../../styles/variaveis";
+import { CarrinhoFooter, CarrinhoHeader, Line } from '../../styles'
+import variaveis from '../../styles/variaveis'
 
-export type Props = { 
-    $pagamento?: boolean;
-    $tiposDePagamento?: 'cartao' | 'boleto' | 'pix'
+export type Props = {
+  $pagamento?: boolean
+  $tiposDePagamento?: 'cartao' | 'boleto' | 'pix'
 }
 
 export const Pagamento = styled.div`
@@ -29,8 +29,8 @@ export const PagamentoHeader = styled(CarrinhoHeader)`
 `
 
 export const ResumoPedido = styled.div`
-display: block;
-margin: 0 auto;;
+  display: block;
+  margin: 0 auto;
   max-width: 380px;
   width: 100%;
   padding: 16px;
@@ -101,6 +101,6 @@ export const Aviso = styled.div`
   text-align: center;
 
   h3 {
-    color:gold;
+    color: gold;
   }
-  `
+`

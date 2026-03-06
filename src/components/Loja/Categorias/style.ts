@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { Botao } from "../../Buttons/styles";
+import { Botao } from '../../Buttons/styles'
 import { Props } from '../Header/index'
 
-import variaveis from "../../../styles/variaveis";
-import { Container } from "../../../styles";
+import variaveis from '../../../styles/variaveis'
+import { Container } from '../../../styles'
 
 export const CategoriaContainer = styled(Container)`
   flex-direction: column;
@@ -12,32 +12,34 @@ export const CategoriaContainer = styled(Container)`
   margin-bottom: 4em;
 `
 export const CategoriaTitle = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
   margin-bottom: 1.2em;
 
-  svg{
-    color:${variaveis.corBotao};
-    margin-right:8px;
+  svg {
+    color: ${variaveis.corBotao};
+    margin-right: 8px;
   }
 `
 
 export const Categoria = styled.div`
-  display:flex;
-  width:640px;
+  display: flex;
+  width: 640px;
 `
 
 export const ButtonsCategoria = styled(Botao)<Props>`
-  background-color: ${props => props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria};
-  color:${variaveis.corFundo};
-  border-radius:8px;
-  margin-right:12px;
-  font-weight: ${props => props.Active ? 'bold' : 'normal'};
+  background-color: ${(props) =>
+    props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria};
+  color: ${variaveis.corFundo};
+  border-radius: 8px;
+  margin-right: 12px;
+  font-weight: ${(props) => (props.Active ? 'bold' : 'normal')};
   transition: 0.1s;
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.Active ? variaveis.corBotao : '#828080ff'};
+    background-color: ${(props) =>
+      props.Active ? variaveis.corBotao : '#828080ff'};
     transition: 0.1s;
   }
 `

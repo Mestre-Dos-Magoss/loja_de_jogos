@@ -1,25 +1,25 @@
-import styled from "styled-components";
-import variaveis from "../../../styles/variaveis";
-import { Link as Links} from "react-router-dom";
+import styled from 'styled-components'
+import variaveis from '../../../styles/variaveis'
+import { Link as Links } from 'react-router-dom'
 
 export const Label = styled.label`
-    font-size: 14px;
-    color:${variaveis.corPrincipal};
-    font-weight: 600;
+  font-size: 14px;
+  color: ${variaveis.corPrincipal};
+  font-weight: 600;
 `
 export const Link = styled.a`
-  color:${variaveis.corLink};
+  color: ${variaveis.corLink};
   font-size: 14px;
-  cursor:pointer;
+  cursor: pointer;
 `
 export const Campo = styled.input`
-  display:block;
-  width:100%;
-  padding:10px 16px;
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
   padding-left: 40px;
-  border:2px solid #12294fff;
-  border-radius:8px;
-  margin:4px 0 16px 0;
+  border: 2px solid #12294fff;
+  border-radius: 8px;
+  margin: 4px 0 16px 0;
   background-color: #130d1b83;
   color: ${variaveis.corPrincipal};
 `
@@ -27,7 +27,7 @@ export const CampoChecke = styled.input`
   width: 14px;
   height: 14px;
   margin-right: 8px;
-  cursor:pointer;
+  cursor: pointer;
 `
 export const FormCheckLabel = styled.div`
   display: flex;
@@ -42,25 +42,30 @@ export const Icones = styled.svg`
   color: #b2b1b0ff;
   left: 12px;
   bottom: 9px;
-  color:${variaveis.corTextoSecundaria};
+  color: ${variaveis.corTextoSecundaria};
 `
 
 export const CampoContainer = styled.div`
   position: relative;
 `
-export const ButtonForm = styled(Links)` //rever
+export const ButtonForm = styled(Links)`
+  //rever
   display: flex;
   justify-content: center;
   align-items: center;
-  width:100%;
-  padding:10px 4px;
-  border:none;
+  width: 100%;
+  padding: 10px 4px;
+  border: none;
   border-radius: 12px;
   font-size: 14px;
   font-weight: bold;
-  color:${variaveis.corPrincipal};
+  color: ${variaveis.corPrincipal};
   background-color: transparent;
-  cursor:pointer;
-  margin-bottom:28px;
-  background-image:linear-gradient(266deg, ${variaveis.corDegrade1},${variaveis.corDegrade2});
+  cursor: pointer;
+  margin-bottom: 28px;
+  background-image: linear-gradient(
+    266deg,
+    ${variaveis.corDegrade1},
+    ${variaveis.corDegrade2}
+  );
 `

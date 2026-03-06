@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Header = styled.header`
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
-  height:160px;
-  margin-bottom:20px;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 20px;
 `

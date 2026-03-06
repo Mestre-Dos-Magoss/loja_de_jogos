@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import variaveis from "../../../styles/variaveis";
+import styled from 'styled-components'
+import variaveis from '../../../styles/variaveis'
 import { Botao } from '../../Buttons/styles'
-import { BotaoAcao, PriceNovo, TagDesconto } from "../../../styles";
-import {Props} from './index'
+import { BotaoAcao, PriceNovo, TagDesconto } from '../../../styles'
+import { Props } from './index'
 
 export const PopUpContainer = styled.div<Props>`
-  display: ${props => props.viewPopUp ? 'block' : 'none'};
+  display: ${(props) => (props.viewPopUp ? 'block' : 'none')};
   position: fixed;
   z-index: 1;
   bottom: 14px;
-  left:320px;
+  left: 320px;
   max-width: 800px;
   width: 100%;
   max-height: 520px;
@@ -19,18 +19,18 @@ export const PopUpContainer = styled.div<Props>`
   background-color: ${variaveis.corPrincipal};
   overflow-y: scroll;
   scrollbar-width: none;
-` 
+`
 
 export const PopUpImgContainer = styled.div`
   position: relative;
   width: 100%;
   height: 320px;
-  
+
   img {
-      width: 880px;
-      height: 320px;
-      border-top-right-radius: 16px;
-      border-top-left-radius: 16px;
+    width: 880px;
+    height: 320px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
   }
 `
 
@@ -39,18 +39,18 @@ export const PopUpDescription = styled.div`
 `
 
 export const Icones = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
 
-  ${BotaoAcao}{
+  ${BotaoAcao} {
     width: 100%;
-    color:${variaveis.corFundo};
+    color: ${variaveis.corFundo};
   }
 `
 
 export const PopUpsText = styled.div`
-  p{
-    color:black;
+  p {
+    color: black;
   }
 `
 
@@ -64,9 +64,9 @@ export const InfosJogo = styled.div`
 `
 
 export const Infos = styled.div`
-  display:flex;
+  display: flex;
 
-  svg{
+  svg {
     color: ${variaveis.corBotao};
   }
   p {
@@ -82,12 +82,12 @@ export const PopUpPrice = styled.div`
   /* align-items: center; */
   max-width: 200px;
 
-  div{
+  div {
     margin-right: 16px;
     padding: 4px 12px;
   }
 
-  span{
+  span {
     margin-bottom: 8px;
   }
 `
@@ -101,7 +101,7 @@ export const TagDescontoo = styled(TagDesconto)`
 `
 
 export const ButtonAction = styled(Botao)`
-  display:flex;
+  display: flex;
   align-items: center;
   padding-left: 16px;
   padding-right: 16px;
@@ -124,6 +124,6 @@ export const AvaliationPopUp = styled.div`
 
   span {
     font-size: 16px;
-    margin-right:12px;
+    margin-right: 12px;
   }
 `

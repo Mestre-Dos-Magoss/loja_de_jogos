@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import {Props as View} from './index'
-import variaveis from "../../../styles/variaveis";
+import styled from 'styled-components'
+import { Props as View } from './index'
+import variaveis from '../../../styles/variaveis'
 
 export type Props = {
-  temProdutos: boolean;
+  temProdutos: boolean
 }
 
 export const CarrinhoLogo = styled.div`
@@ -17,7 +17,7 @@ export const CarrinhoLogo = styled.div`
     margin-right: 8px;
   }
 
-  p{
+  p {
     text-transform: capitalize;
   }
 `
@@ -29,17 +29,17 @@ export const CarrinhoSubTotal = styled.div`
   text-transform: capitalize;
   margin-bottom: 16px;
 
-  p{
+  p {
     color: ${variaveis.corFundo};
   }
 `
 
 export const CarrinhoContainer = styled.div<View>`
-  display: ${props => props.viewShopping ? 'block' : 'none'};
+  display: ${(props) => (props.viewShopping ? 'block' : 'none')};
   z-index: 2;
   position: fixed;
   right: 0;
-  top:0;
+  top: 0;
   max-width: 460px;
   width: 100%;
   height: 100vh;
