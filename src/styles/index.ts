@@ -96,7 +96,7 @@ export const ContainerImg = styled(ImgContainer)`
 
 export const BotaoAcao = styled(Button)`
   display: flex;
-  width: 16%;
+  width: 20%;
   padding: 8px 10px;
   border-radius: 6px;
   background-color: transparent;
@@ -207,6 +207,11 @@ export const CarrinhoHeader = styled.div`
 
   p {
     color: ${variaveis.corFundo};
+  }
+
+  ${Botao} {
+    color: #000;
+    max-width: 30px;
   }
 `
 
@@ -325,6 +330,20 @@ export const PagamentoHeaderItem = styled.div`
     margin-right: 8px;
     margin-bottom: 0;
     color: ${variaveis.corBotaoEfeito};
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      margin-bottom: 0;
+      color: ${variaveis.corBotaoEfeito};
+    }
   }
 `
 

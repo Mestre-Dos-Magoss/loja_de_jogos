@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Container, ContainerPrices } from '../../../styles'
 import variaveis from '../../../styles/variaveis'
 import { Botao } from '../../Buttons/styles'
-import { Props } from '../Header'
+import { Props } from '.'
 
 export const Carrousel = styled(Container)`
   position: relative;

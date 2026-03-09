@@ -1,9 +1,11 @@
 import Icones from '../../../styles/icones'
 import Paragrafo from '../../Paragrafo'
 
-import { Props } from '../Header/index'
 import * as S from './style'
 
+export type Props = {
+  Active?: boolean
+}
 const Categorias = ({ Active }: Props) => {
   return (
     <S.CategoriaContainer>

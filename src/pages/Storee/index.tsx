@@ -6,7 +6,7 @@ const Store = () => (
   <>
     <Loja />
     <PopUps viewPopUp={false} />
-    <Carrinho viewShopping={true} />
+    <Carrinho />
   </>
 )
 

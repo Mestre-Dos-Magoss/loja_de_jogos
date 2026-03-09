@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import OpcoesPagamento from '../../components/Loja/OpcoesPagamento'
 import ContainerBoletoPIX from '../../components/Loja/ContainersPagamento/Boleto_PIX/boleto_pix'
@@ -107,10 +107,12 @@ const AreaPagamento = () => {
       <S.Pagamento>
         <S.PagamentoHeader>
           <PagamentoHeaderItem>
-            {Icones.seta}
-            <P as="p" fontSize={14}>
-              voltar ao carrinho
-            </P>
+            <Link className="link" to="/">
+              {Icones.seta}
+              <P as="p" fontSize={14}>
+                voltar ao carrinho
+              </P>
+            </Link>
           </PagamentoHeaderItem>
         </S.PagamentoHeader>
         <CarrinhoProdutos temProdutos={true}>

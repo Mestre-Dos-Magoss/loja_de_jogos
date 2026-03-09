@@ -1,9 +1,12 @@
 import styled from 'styled-components'
-import { Props as View } from './index'
 import variaveis from '../../../styles/variaveis'
 
 export type Props = {
   temProdutos: boolean
+}
+
+type View = {
+  isActive: boolean
 }
 
 export const CarrinhoLogo = styled.div`
@@ -34,8 +37,8 @@ export const CarrinhoSubTotal = styled.div`
   }
 `
 
-export const CarrinhoContainer = styled.div<View>`
-  display: ${(props) => (props.viewShopping ? 'block' : 'none')};
+export const CarrinhoContainer = styled.div`
+  display: none;
   z-index: 2;
   position: fixed;
   right: 0;
@@ -45,4 +48,23 @@ export const CarrinhoContainer = styled.div<View>`
   height: 100vh;
   border: 1px solid aliceblue;
   background-color: ${variaveis.corPrincipal};
+
+  &.isActivi {
+    display: block;
+  }
+`
+export const Overlay = styled.div`
+  content: '';
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  &.isActivi {
+    display: block;
+  }
 `

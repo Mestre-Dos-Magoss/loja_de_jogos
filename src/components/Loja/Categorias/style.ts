@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { Botao } from '../../Buttons/styles'
-import { Props } from '../Header/index'
+import { Props } from '.'
 
 import variaveis from '../../../styles/variaveis'
 import { Container } from '../../../styles'

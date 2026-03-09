@@ -11,7 +11,9 @@ import {
   ContainerPrices
 } from '../../../styles/index'
 
-import { Props } from '../Header'
+export type Props = {
+  Active?: boolean
+}
 
 const Carrousel = ({ Active }: Props) => {
   return (

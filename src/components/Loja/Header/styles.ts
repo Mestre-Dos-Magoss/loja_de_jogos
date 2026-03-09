@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 
 import variaveis from '../../../styles/variaveis'
-import { Props } from '.'
 import { Container } from '../../../styles'
 import { Link } from 'react-router-dom'
 
 type PropsPopUp = {
-  isActive: boolean
+  isActive?: boolean
 }
 
 export const Header = styled.div`
@@ -31,8 +30,10 @@ export const FormContainer = styled(Container)`
 
 export const FormContainerComponents = styled(FormContainer)`
   width: 16vw;
+  position: relative;
+  justify-content: space-evenly;
 `
-export const IsSelectedLink = styled(Link)<Props>`
+export const IsSelectedLink = styled(Link)<PropsPopUp>`
   display: flex;
   padding: 8px 12px;
   font-weight: bold;
@@ -40,7 +41,7 @@ export const IsSelectedLink = styled(Link)<Props>`
   border-radius: 8px;
   margin-right: 16px;
   background-color: ${(props) =>
-    props.Active ? variaveis.corBotao : 'transparent'};
+    props.isActive ? variaveis.corBotao : 'transparent'};
   color: ${variaveis.corFundo};
   transition: 0.2s;
   cursor: pointer;
@@ -50,13 +51,8 @@ export const IsSelectedLink = styled(Link)<Props>`
     width: 16px;
     height: 16px;
   }
-
-  /* &:hover{
-    background-color: ${(props) =>
-    props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria} ;
-  } */
 `
-export const IsSelected = styled.div<Props>`
+export const IsSelected = styled.div<PropsPopUp>`
   display: flex;
   padding: 8px 12px;
   font-weight: bold;
@@ -64,7 +60,7 @@ export const IsSelected = styled.div<Props>`
   border-radius: 8px;
   margin-right: 16px;
   background-color: ${(props) =>
-    props.Active ? variaveis.corBotao : 'transparent'};
+    props.isActive ? variaveis.corBotao : 'transparent'};
   color: ${variaveis.corFundo};
   transition: 0.2s;
   cursor: pointer;
@@ -113,4 +109,24 @@ export const PopUpSair = styled(Link)<PropsPopUp>`
   border: 1px solid ${variaveis.cinzaFraco};
   border-radius: 16px;
   text-transform: capitalize;
+`
+export const ItensCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 24px;
+  padding: 2px;
+  font-size: 16px;
+  border-radius: 50%;
+  background-color: ${variaveis.corBotao};
+  color: ${variaveis.corPrincipal};
+`
+
+export const LinksContainer = styled.div<PropsPopUp>`
+  display: flex;
+  position: ${(props) => (props.isActive ? '' : 'absolute')};
+  left: 500px;
 `
