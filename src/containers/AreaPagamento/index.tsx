@@ -20,6 +20,7 @@ import {
   PagamentoHeaderItem
 } from '../../styles'
 import * as S from './styles'
+import { FormatPrice } from '../../utils/formatPrices'
 
 const AreaPagamento = () => {
   const itens = useSelector((state: RootState) => state.shoppingCart.itens)
@@ -27,7 +28,7 @@ const AreaPagamento = () => {
   const subTotal = (): number => {
     return itens.reduce((total, item) => {
       const preco = Number(item.newPrice) || Number(item.price)
-      return Math.ceil(total + preco)
+      return total + preco
     }, 0)
   }
   const impostos = (valor: number): number => {
@@ -61,7 +62,7 @@ const AreaPagamento = () => {
     let mensagem = ''
 
     if (pagamentoSelecionado === enums.FormasDePagamento.CARTAO)
-      return (mensagem = 'confirma pagamento R$ 22.00')
+      return (mensagem = `confirma pagamento ${FormatPrice(total)}`)
     else if (pagamentoSelecionado === enums.FormasDePagamento.BOLETO)
       return (mensagem = 'confirmar e gerar boleto')
     return (mensagem = 'confirmar e gerar PIX')
@@ -120,16 +121,16 @@ const AreaPagamento = () => {
           <S.ResumoPedido>
             <S.ResumoPedidoItem>
               <span>Itens ({itens.length})</span>
-              <span>R$ {subTotal()}</span>
+              <span>{FormatPrice(subTotal())}</span>
             </S.ResumoPedidoItem>
             <S.ResumoPedidoItem>
               <span> Impostos </span>
-              <span> R$ {imposto} </span>
+              <span> {FormatPrice(imposto)} </span>
             </S.ResumoPedidoItem>
             <S.DLine />
             <S.ResumoPedidoItem>
               <span> Total </span>
-              <span> R$ {total} </span>
+              <span> R$ {FormatPrice(total)} </span>
             </S.ResumoPedidoItem>
           </S.ResumoPedido>
           <div>
@@ -170,10 +171,11 @@ const AreaPagamento = () => {
         <S.PagamentoFooter temProdutos>
           <ButtonCarrinho
             title="Finalizar comprar"
-            action={() => navigate('/library')}
+            action={() => navigate(`${itens.length > 0 ? '/library' : ''}`)}
+            className={itens.length <= 0 ? 'disabled' : ''}
           >
             {paymentText()}
-          </ButtonCarrinho>{' '}
+          </ButtonCarrinho>
           {/*botao irá mudar a depender da opção escolhida */}
         </S.PagamentoFooter>
       </S.Pagamento>

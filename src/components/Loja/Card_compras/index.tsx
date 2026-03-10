@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { remove } from '../../../store/reducers/shoppingCart'
+import { FormatPrice } from '../../../utils/formatPrices'
 
 import { InfosGame, PriceAntigoo, PriceNovo } from '../../../styles'
 import { P } from '../../Paragrafo/Paragrafo'
@@ -30,6 +31,14 @@ const CardCompras = ({
   // receberei as informações do produto e passarei por suas props
   const dispatch = useDispatch()
 
+  const shortenDescription = (descricao: string): string => {
+    if (description) {
+      const limitedDescription = descricao.slice(0, 200) + '...'
+      return limitedDescription
+    }
+    return '...'
+  }
+
   return (
     <S.Produto size={size}>
       <div>
@@ -42,12 +51,12 @@ const CardCompras = ({
         </div>
         <S.description size={size}>
           <P as="p" fontSize={18}>
-            {description}
+            {shortenDescription(description)}
           </P>
         </S.description>
         <S.Price size={size}>
-          <PriceAntigoo>{price}</PriceAntigoo>
-          <PriceNovo>{newPrice}</PriceNovo>
+          <PriceAntigoo>{FormatPrice(price)}</PriceAntigoo>
+          <PriceNovo>{FormatPrice(newPrice)}</PriceNovo>
         </S.Price>
       </InfosGame>
       <S.ExcluirProduto

@@ -35,7 +35,6 @@ export const Produto = styled.div<Size>`
 export const description = styled.div<Size>`
   display: ${(props) => (props.size === 'big' ? 'block' : 'none')};
   width: 100%;
-  height: 78px;
   overflow: hidden;
 `
 

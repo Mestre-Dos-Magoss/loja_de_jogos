@@ -160,6 +160,7 @@ export const Avaliations = styled.div`
 
 export const ContainerPrices = styled.div`
   display: flex;
+  align-items: center;
   width: 35%;
   margin-bottom: 1em;
   color: ${variaveis.corPrincipal};

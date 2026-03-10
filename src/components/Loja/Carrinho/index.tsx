@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../store'
 import CardCompras from '../Card_compras'
-import Icones from '../../../styles/icones'
+import { FormatPrice } from '../../../utils/formatPrices'
 
+import Icones from '../../../styles/icones'
 import { P } from '../../Paragrafo/Paragrafo'
 import {
   CarrinhoHeader,
@@ -27,7 +28,7 @@ const Carrinho = () => {
       //como eu não sei que tipos de dados a API irá retornar eu garanto que ele seja convertido em número como é o esperado
       const preco = Number(item.newPrice) || Number(item.price)
       // mas caso ele venha como null ele irá olhar para o preço normal, assim garantindo a integridade dos valores passados ao usuário
-      return Math.ceil(total + preco)
+      return total + preco
     }, 0)
   }
   useEffect(() => {
@@ -96,7 +97,7 @@ const Carrinho = () => {
               subtotal
             </P>
             <P as="p" fontSize={16}>
-              R$ {Preco}
+              {FormatPrice(Preco)}
             </P>
           </S.CarrinhoSubTotal>
           <ButtonCarrinho

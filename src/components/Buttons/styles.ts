@@ -14,4 +14,10 @@ export const Botao = styled.button`
   color: ${variaveis.corPrincipal};
   background-color: transparent;
   cursor: pointer;
+
+  &.disabled {
+    background-color: #a0a5aa;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `
