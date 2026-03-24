@@ -1,16 +1,21 @@
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../../store'
 import { useContext, useState } from 'react'
+
+import { CartContext } from '../../../utils/contexts/carrinho'
+import { alteraTermo } from '../../../store/reducers/filtro'
+
 import Icones from '../../../styles/icones'
 import { ContainerImg, BotaoAcao, LogoContainer } from '../../../styles/index'
 import * as S from './styles'
-import { CartContext } from '../../../utils/enuns/contexts/carrinho'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../store'
 
 const HeaderLoja = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false) //apenas para testar o comportamento
+  const [isActive, setIsActive] = useState('store')
+
   const { toggleState } = useContext(CartContext)
   const itens = useSelector((state: RootState) => state.shoppingCart.itens)
-  const [isActive, setIsActive] = useState('store')
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -40,7 +45,11 @@ const HeaderLoja = () => {
             </S.FormContainerComponents>
             <S.SearchContainer>
               {Icones.lupa}
-              <S.Search type="search" placeholder="Buscar jogos..." />
+              <S.Search
+                type="search"
+                placeholder="Buscar jogos..."
+                onChange={(event) => dispatch(alteraTermo(event.target.value))}
+              />
             </S.SearchContainer>
             <S.FormContainerComponents>
               <BotaoAcao title="Trocar tema">{Icones.sol}</BotaoAcao>

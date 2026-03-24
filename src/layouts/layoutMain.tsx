@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import HeaderLoja from '../components/Loja/Header'
 import Footer from '../components/Loja/Footer'
-import { CartProvider } from '../utils/enuns/contexts/carrinho'
+import { CartProvider } from '../utils/contexts/carrinho'
 
 const LayoutMain = () => {
   return (

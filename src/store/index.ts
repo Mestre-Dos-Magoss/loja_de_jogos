@@ -1,12 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { Api } from '../services/index'
+
 import shoppingCart from './reducers/shoppingCart'
 import library from './reducers/library'
-import { Api } from '../services/index'
+import filtro from './reducers/filtro'
+import modal from './reducers/modal'
 
 const store = configureStore({
   reducer: {
     shoppingCart: shoppingCart,
     library: library,
+    filtro: filtro,
+    modal: modal,
     [Api.reducerPath]: Api.reducer
   },
   middleware: (getDefaultMiddleware) =>

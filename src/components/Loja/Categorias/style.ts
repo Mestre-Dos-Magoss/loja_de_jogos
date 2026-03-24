@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
-import { Botao } from '../../Buttons/styles'
-import { Props } from '.'
-
 import variaveis from '../../../styles/variaveis'
 import { Container } from '../../../styles'
+import Button from '../../Buttons'
+
+type Props = {
+  active: boolean
+  id: number
+}
 
 export const CategoriaContainer = styled(Container)`
   flex-direction: column;
@@ -27,19 +30,19 @@ export const Categoria = styled.div`
   width: 640px;
 `
 
-export const ButtonsCategoria = styled(Botao)<Props>`
+export const ButtonsCategoria = styled(Button)<Props>`
   background-color: ${(props) =>
-    props.Active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria};
+    props.active ? variaveis.corBotaoEfeito : variaveis.corTextoSecundaria};
   color: ${variaveis.corFundo};
   border-radius: 8px;
   margin-right: 12px;
-  font-weight: ${(props) => (props.Active ? 'bold' : 'normal')};
+  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
   transition: 0.1s;
   cursor: pointer;
 
   &:hover {
     background-color: ${(props) =>
-      props.Active ? variaveis.corBotao : '#828080ff'};
+      props.active ? variaveis.corBotao : '#828080ff'};
     transition: 0.1s;
   }
 `

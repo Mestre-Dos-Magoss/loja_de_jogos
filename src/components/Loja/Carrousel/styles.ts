@@ -9,16 +9,27 @@ export const Carrousel = styled(Container)`
   position: relative;
   display: block;
   margin-bottom: 3em;
-  /* overflow: hidden; */
-`
-export const CarrouselImg = styled.img`
   width: 100%;
   height: 512px;
   border-radius: 16px;
-  /* transform: scale(1.2); */
-  /* Testar mais tarde os efeitos */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(292deg, transparent, #35354b);
+    backdrop-filter: blur(2px);
+    border-radius: 16px;
+  }
 `
 export const CarrouselDescription = styled.div`
+  position: relative;
   width: 600px;
   position: absolute;
   top: 100px;

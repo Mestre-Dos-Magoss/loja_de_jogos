@@ -55,8 +55,14 @@ const CardCompras = ({
           </P>
         </S.description>
         <S.Price size={size}>
-          <PriceAntigoo>{FormatPrice(price)}</PriceAntigoo>
-          <PriceNovo>{FormatPrice(newPrice)}</PriceNovo>
+          {newPrice <= 0 ? (
+            <PriceNovo>{FormatPrice(price)}</PriceNovo>
+          ) : (
+            <>
+              <PriceAntigoo>{FormatPrice(price)}</PriceAntigoo>
+              <PriceNovo>{FormatPrice(newPrice)}</PriceNovo>
+            </>
+          )}
         </S.Price>
       </InfosGame>
       <S.ExcluirProduto

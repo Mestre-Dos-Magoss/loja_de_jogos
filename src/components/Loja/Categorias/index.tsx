@@ -4,9 +4,10 @@ import Paragrafo from '../../Paragrafo'
 import * as S from './style'
 
 export type Props = {
-  Active?: boolean
+  children: React.ReactNode
 }
-const Categorias = ({ Active }: Props) => {
+
+const Categorias = ({ children }: Props) => {
   return (
     <S.CategoriaContainer>
       <S.CategoriaTitle>
@@ -15,16 +16,7 @@ const Categorias = ({ Active }: Props) => {
           Categorias
         </Paragrafo>
       </S.CategoriaTitle>
-      <S.Categoria>
-        <S.ButtonsCategoria Active>Todos</S.ButtonsCategoria>
-        <S.ButtonsCategoria>Ação</S.ButtonsCategoria>
-        <S.ButtonsCategoria>RPG</S.ButtonsCategoria>
-        <S.ButtonsCategoria>Corrrida</S.ButtonsCategoria>
-        <S.ButtonsCategoria>Terror</S.ButtonsCategoria>
-        <S.ButtonsCategoria>Esporte</S.ButtonsCategoria>
-        <S.ButtonsCategoria>Indie</S.ButtonsCategoria>
-        <S.ButtonsCategoria>Aventura</S.ButtonsCategoria>
-      </S.Categoria>
+      <S.Categoria>{children}</S.Categoria>
     </S.CategoriaContainer>
   )
 }

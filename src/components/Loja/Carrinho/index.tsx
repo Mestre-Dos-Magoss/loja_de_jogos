@@ -14,7 +14,7 @@ import {
 import * as S from './styles'
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CartContext } from '../../../utils/enuns/contexts/carrinho'
+import { CartContext } from '../../../utils/contexts/carrinho'
 import Button from '../../Buttons'
 
 const Carrinho = () => {
@@ -52,7 +52,7 @@ const Carrinho = () => {
               carrinho {quantidade}
             </P>
           </S.CarrinhoLogo>
-          <Button title="Fechar o carrinho" action={() => toggleState()}>
+          <Button title="Fechar o carrinho" action={toggleState}>
             {Icones.X}
           </Button>
         </CarrinhoHeader>
@@ -111,7 +111,10 @@ const Carrinho = () => {
           </ButtonCarrinho>
         </CarrinhoFooter>
       </S.CarrinhoContainer>
-      <S.Overlay className={isOpen ? 'isActivi' : ''}></S.Overlay>
+      <S.Overlay
+        onClick={toggleState}
+        className={isOpen ? 'isActivi' : ''}
+      ></S.Overlay>
     </>
   )
 }

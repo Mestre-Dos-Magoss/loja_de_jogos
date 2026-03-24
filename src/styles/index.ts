@@ -431,3 +431,7 @@ export const ButtonsIcons = styled(Botao)`
     color: ${variaveis.corFundo};
   }
 `
+export const TagDescontoo = styled(TagDesconto)`
+  padding: 4px 8px;
+  max-width: 48px;
+`
