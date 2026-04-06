@@ -17,6 +17,7 @@ import Game from '../../models/jogo'
 import { alteraCategoria } from '../../store/reducers/filtro'
 import { ButtonsCategoria } from '../../components/Loja/Categorias/style'
 import Modal from '../../components/Loja/Modal'
+import Favoritos from '../../components/Loja/Favoritos'
 
 const ButtonsCategories = [
   enuns.Categoria.TODOS,
@@ -103,6 +104,7 @@ const Loja = () => {
           </ButtonsCategoria>
         ))}
       </Categorias>
+      <Favoritos />
       {filtro === enuns.Categoria.TODOS && termo === '' ? (
         <>
           <ListaDeJogos

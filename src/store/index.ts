@@ -5,6 +5,7 @@ import shoppingCart from './reducers/shoppingCart'
 import library from './reducers/library'
 import filtro from './reducers/filtro'
 import modal from './reducers/modal'
+import favorito from './reducers/favoritos'
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     library: library,
     filtro: filtro,
     modal: modal,
+    favorito: favorito,
     [Api.reducerPath]: Api.reducer
   },
   middleware: (getDefaultMiddleware) =>

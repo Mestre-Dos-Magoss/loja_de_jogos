@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../../../store/reducers/shoppingCart'
 import { open, viewGame } from '../../../store/reducers/modal'
 import Game from '../../../models/jogo'
@@ -22,19 +22,10 @@ import {
 import { DLine } from '../../../containers/AreaPagamento/styles'
 import { P } from '../../Paragrafo/Paragrafo'
 import * as S from './styles'
+import { adicionaJogo, removeJogo } from '../../../store/reducers/favoritos'
+import { RootState } from '../../../store'
 
 type Props = Game
-
-type FavoritarGames = {
-  id: number
-  name: string
-  avaliationGame: number
-  descontPrice: number
-  image: string
-  price: number
-  newPrice: number
-  tag: string
-}
 
 const CardJogo = ({
   id,
@@ -51,8 +42,9 @@ const CardJogo = ({
 }: Props) => {
   const itsInTheStore = true // somente para os testes
   const dispatch = useDispatch()
+  const itens = useSelector((state: RootState) => state.favorito.item)
 
-  const adicionarGame = () => {
+  function adicionarGame() {
     dispatch(
       add({
         id,
@@ -70,7 +62,7 @@ const CardJogo = ({
     )
   }
 
-  const favoritarGame = ({
+  function favoritarGame({
     id,
     name,
     avaliationGame,
@@ -78,9 +70,12 @@ const CardJogo = ({
     image,
     price,
     newPrice,
-    tag
-  }: FavoritarGames) => {
-    const key = id
+    tag,
+    description,
+    developmente,
+    realeaseDate
+  }: Props) {
+    const key = 'localStorage_key'
     const GameObject = {
       id,
       name,
@@ -89,13 +84,32 @@ const CardJogo = ({
       image,
       price,
       newPrice,
-      tag
+      tag,
+      description,
+      developmente,
+      realeaseDate
     }
 
-    localStorage.setItem(JSON.stringify(key), JSON.stringify(GameObject))
+    const favoritos = JSON.parse(localStorage.getItem(key) || '[]') as Props[]
+    const verificaExistenciaFavoritos = favoritos.find(
+      (f: Props) => f.id === GameObject.id
+    )
+
+    if (!verificaExistenciaFavoritos) {
+      const novosFavoritos = [...favoritos, GameObject]
+      localStorage.setItem(key, JSON.stringify(novosFavoritos))
+
+      novosFavoritos.forEach((game) => dispatch(adicionaJogo(game)))
+    } else {
+      const removeItem = favoritos.filter((item) => item.id !== GameObject.id)
+      const favoritoAtual = [...removeItem]
+
+      localStorage.setItem(key, JSON.stringify(favoritoAtual))
+      dispatch(removeJogo(GameObject))
+    }
   }
 
-  const eventoClick = (event: React.MouseEvent<HTMLDivElement>): void => {
+  function eventoClick(event: React.MouseEvent<HTMLDivElement>): void {
     const target = event.target as HTMLElement
     if (target.closest('button')) {
       return
@@ -119,6 +133,11 @@ const CardJogo = ({
     }
   }
 
+  function getIdFavoriteItem(id: number) {
+    const verifyItens = itens.find((gameFav) => gameFav.id === id)
+    return verifyItens
+  }
+
   return (
     <>
       {itsInTheStore ? (
@@ -140,11 +159,16 @@ const CardJogo = ({
                     image,
                     price,
                     newPrice,
-                    tag
+                    tag,
+                    description,
+                    developmente,
+                    realeaseDate
                   })
                 }
               >
-                {Icones.coracao}
+                {getIdFavoriteItem(id)
+                  ? Icones.coracaoVermelho
+                  : Icones.coracao}
               </BotaoAcao>
               {descontPrice <= 0 ? (
                 ''
