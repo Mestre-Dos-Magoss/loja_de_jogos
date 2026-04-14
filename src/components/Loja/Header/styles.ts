@@ -121,8 +121,14 @@ export const ItensCart = styled.div`
   padding: 2px;
   font-size: 16px;
   border-radius: 50%;
+  right: 0px;
   background-color: ${variaveis.corBotao};
   color: ${variaveis.corPrincipal};
+`
+
+export const ItensFavorites = styled(ItensCart)`
+  right: 42px;
+  background-color: ${variaveis.corTag};
 `
 
 export const LinksContainer = styled.div<PropsPopUp>`

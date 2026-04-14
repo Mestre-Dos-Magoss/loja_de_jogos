@@ -14,7 +14,8 @@ const HeaderLoja = () => {
   const [isActive, setIsActive] = useState('store')
 
   const { toggleState } = useContext(CartContext)
-  const itens = useSelector((state: RootState) => state.shoppingCart.itens)
+  const itensCart = useSelector((state: RootState) => state.shoppingCart.itens)
+  const gamefavoritado = useSelector((state: RootState) => state.favorito.item)
   const dispatch = useDispatch()
 
   return (
@@ -61,11 +62,14 @@ const HeaderLoja = () => {
                   sair
                 </S.PopUpSair>
               </S.IsSelected>
-              <BotaoAcao title="Favoritos">{Icones.coracao}</BotaoAcao>
-              {itens.length > 0 ? (
-                <S.ItensCart>{itens.length}</S.ItensCart>
-              ) : (
-                ''
+              <BotaoAcao title="Favoritos">
+                <a href="#favoritos">{Icones.coracao}</a>
+              </BotaoAcao>
+              {gamefavoritado.length > 0 && (
+                <S.ItensFavorites>{gamefavoritado.length}</S.ItensFavorites>
+              )}
+              {itensCart.length > 0 && (
+                <S.ItensCart>{itensCart.length}</S.ItensCart>
               )}
               <BotaoAcao title="Ir ao carrinho" action={() => toggleState()}>
                 {Icones.carrinho}

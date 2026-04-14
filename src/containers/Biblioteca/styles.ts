@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 import { Botao } from '../../components/Buttons/styles'
+import { ListContainer } from '../../components/Loja/Lista_de_jogos/styles'
 
 export const BibliotecaCheia = styled.div`
   width: 100%;
   padding: 32px 16px;
+
+  ${ListContainer} {
+    gap: 6px;
+  }
 `
 
 export const Title = styled.div`
@@ -44,22 +49,22 @@ export const ContainerBotoes = styled.div`
     display: flex;
     column-gap: 1em;
   }
-`
 
-export const ButtonsText = styled(Botao)`
-  padding: 6px 16px;
-  font-size: 16px;
-  text-transform: capitalize;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: ${variaveis.corTextoSecundaria}; //if select should be purple
-  color: ${variaveis.corFundo};
+  ${Botao} {
+    padding: 6px 16px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: ${variaveis.corTextoSecundaria}; //if select should be purple
+    color: ${variaveis.corFundo};
 
-  svg {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    width: 24px;
-    height: 24px;
+    svg {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      width: 24px;
+      height: 24px;
+    }
   }
 `
 

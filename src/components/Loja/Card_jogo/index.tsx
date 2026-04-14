@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { add } from '../../../store/reducers/shoppingCart'
-import { open, viewGame } from '../../../store/reducers/modal'
-import Game from '../../../models/jogo'
-import { FormatPrice } from '../../../utils/formatPrices'
+import { useDispatch } from 'react-redux'
 
+import Game from '../../../models/jogo'
+
+import useFavorites from '../../../hooks/useFavorites'
 import Paragrafo from '../../Paragrafo'
 import Icones from '../../../styles/icones'
 import {
@@ -22,91 +21,22 @@ import {
 import { DLine } from '../../../containers/AreaPagamento/styles'
 import { P } from '../../Paragrafo/Paragrafo'
 import * as S from './styles'
-import { adicionaJogo, removeJogo } from '../../../store/reducers/favoritos'
-import { RootState } from '../../../store'
 
-type Props = Game
+import { add } from '../../../store/reducers/shoppingCart'
+import { open, viewGame } from '../../../store/reducers/modal'
+import { FormatPrice } from '../../../utils/formatPrices'
 
-const CardJogo = ({
-  id,
-  name,
-  avaliationGame,
-  descontPrice,
-  image,
-  newPrice,
-  price,
-  tag,
-  description,
-  developmente,
-  realeaseDate
-}: Props) => {
-  const itsInTheStore = true // somente para os testes
+type Props = {
+  game: Game
+  itsInTheStore?: boolean
+}
+
+const CardJogo = ({ game, itsInTheStore }: Props) => {
   const dispatch = useDispatch()
-  const itens = useSelector((state: RootState) => state.favorito.item)
+  const { favoritarGame, getIdFavoriteItem } = useFavorites()
 
   function adicionarGame() {
-    dispatch(
-      add({
-        id,
-        name,
-        image,
-        price,
-        newPrice,
-        avaliationGame,
-        descontPrice,
-        description,
-        developmente,
-        realeaseDate,
-        tag
-      })
-    )
-  }
-
-  function favoritarGame({
-    id,
-    name,
-    avaliationGame,
-    descontPrice,
-    image,
-    price,
-    newPrice,
-    tag,
-    description,
-    developmente,
-    realeaseDate
-  }: Props) {
-    const key = 'localStorage_key'
-    const GameObject = {
-      id,
-      name,
-      avaliationGame,
-      descontPrice,
-      image,
-      price,
-      newPrice,
-      tag,
-      description,
-      developmente,
-      realeaseDate
-    }
-
-    const favoritos = JSON.parse(localStorage.getItem(key) || '[]') as Props[]
-    const verificaExistenciaFavoritos = favoritos.find(
-      (f: Props) => f.id === GameObject.id
-    )
-
-    if (!verificaExistenciaFavoritos) {
-      const novosFavoritos = [...favoritos, GameObject]
-      localStorage.setItem(key, JSON.stringify(novosFavoritos))
-
-      novosFavoritos.forEach((game) => dispatch(adicionaJogo(game)))
-    } else {
-      const removeItem = favoritos.filter((item) => item.id !== GameObject.id)
-      const favoritoAtual = [...removeItem]
-
-      localStorage.setItem(key, JSON.stringify(favoritoAtual))
-      dispatch(removeJogo(GameObject))
-    }
+    dispatch(add(game))
   }
 
   function eventoClick(event: React.MouseEvent<HTMLDivElement>): void {
@@ -116,26 +46,21 @@ const CardJogo = ({
     } else {
       dispatch(
         viewGame({
-          id,
-          name,
-          image,
-          price,
-          newPrice,
-          avaliationGame,
-          descontPrice,
-          description,
-          developmente,
-          realeaseDate,
-          tag
+          id: game.id,
+          name: game.name,
+          image: game.image,
+          price: game.price,
+          newPrice: game.newPrice,
+          avaliationGame: game.avaliationGame,
+          descontPrice: game.descontPrice,
+          description: game.description,
+          developmente: game.developmente,
+          realeaseDate: game.realeaseDate,
+          tag: game.tag
         })
       )
       dispatch(open())
     }
-  }
-
-  function getIdFavoriteItem(id: number) {
-    const verifyItens = itens.find((gameFav) => gameFav.id === id)
-    return verifyItens
   }
 
   return (
@@ -150,52 +75,38 @@ const CardJogo = ({
             <FavoritarContainer>
               <BotaoAcao
                 title="Favoritar game"
-                action={() =>
-                  favoritarGame({
-                    id,
-                    name,
-                    avaliationGame,
-                    descontPrice,
-                    image,
-                    price,
-                    newPrice,
-                    tag,
-                    description,
-                    developmente,
-                    realeaseDate
-                  })
-                }
+                action={() => favoritarGame(game)}
               >
-                {getIdFavoriteItem(id)
+                {getIdFavoriteItem(game.id)
                   ? Icones.coracaoVermelho
                   : Icones.coracao}
               </BotaoAcao>
-              {descontPrice <= 0 ? (
+              {game.descontPrice <= 0 ? (
                 ''
               ) : (
-                <TagDescontoo>{descontPrice + '%'}</TagDescontoo>
+                <TagDescontoo>{game.descontPrice + '%'}</TagDescontoo>
               )}
             </FavoritarContainer>
-            <img src={image} alt="jogo" />
+            <img src={game.image} alt="jogo" />
           </S.CardIMG>
           <S.ContainerDescription>
             <P as="h4" fontSize={14} marginBottom={4}>
-              {name}
+              {game.name}
             </P>
             <Avaliations>
-              <Categoriaa>{tag}</Categoriaa>
+              <Categoriaa>{game.tag}</Categoriaa>
               <Avaliatioon>
                 {Icones.estrela}
-                <P fontSize={16}>{avaliationGame}</P>
+                <P fontSize={16}>{game.avaliationGame}</P>
               </Avaliatioon>
             </Avaliations>
             <ActionContainer>
               <ContainerPrices>
-                <PriceAntigoo>{FormatPrice(price)}</PriceAntigoo>
-                {descontPrice <= 0 ? (
+                <PriceAntigoo>{FormatPrice(game.price)}</PriceAntigoo>
+                {game.descontPrice <= 0 ? (
                   ''
                 ) : (
-                  <PriceNovo>{FormatPrice(newPrice)}</PriceNovo>
+                  <PriceNovo>{FormatPrice(game.newPrice)}</PriceNovo>
                 )}
               </ContainerPrices>
               <S.ButtonCart
@@ -210,18 +121,18 @@ const CardJogo = ({
       ) : (
         <S.CardGame itsInTheStore={true}>
           <S.CardIMG>
-            <img src={image} alt="jogo" />
+            <img src={game.image} alt="jogo" />
           </S.CardIMG>
           <S.ContainerDescription>
             <P as="h4" fontSize={14} marginBottom={4}>
-              {name}
+              {game.name}
             </P>
             <S.AvaliacoesBiblioteca>
               <S.avaliationsIcone>
                 {Icones.estrela}
-                <P fontSize={16}>{avaliationGame}</P>
+                <P fontSize={16}>{game.avaliationGame}</P>
               </S.avaliationsIcone>
-              <Categoriaa>{tag}</Categoriaa>
+              <Categoriaa>{game.tag}</Categoriaa>
             </S.AvaliacoesBiblioteca>
             <ActionContainer>
               <ContainerPrices>

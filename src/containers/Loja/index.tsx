@@ -1,4 +1,4 @@
-import { useGetGamesQuery } from '../../services/index'
+import { useGetGamesQuery } from '../../services/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { useEffect, useState } from 'react'
@@ -114,20 +114,7 @@ const Loja = () => {
           >
             {promocoes.map((jogo) => (
               <li key={jogo.id}>
-                <CardJogo
-                  key={jogo.id}
-                  name={jogo.name}
-                  avaliationGame={jogo.avaliationGame}
-                  image={jogo.image}
-                  descontPrice={jogo.descontPrice}
-                  price={jogo.price}
-                  newPrice={jogo.newPrice}
-                  tag={jogo.tag}
-                  description={jogo.description}
-                  developmente={jogo.developmente}
-                  realeaseDate={jogo.realeaseDate}
-                  id={jogo.id}
-                />
+                <CardJogo game={jogo} itsInTheStore={true} />
               </li>
             ))}
           </ListaDeJogos>
@@ -138,40 +125,14 @@ const Loja = () => {
           >
             {lancamentos.map((jogo) => (
               <li key={jogo.id}>
-                <CardJogo
-                  key={jogo.id}
-                  name={jogo.name}
-                  avaliationGame={jogo.avaliationGame}
-                  image={jogo.image}
-                  descontPrice={jogo.descontPrice}
-                  price={jogo.price}
-                  newPrice={jogo.newPrice}
-                  tag={jogo.tag}
-                  description={jogo.description}
-                  developmente={jogo.developmente}
-                  realeaseDate={jogo.realeaseDate}
-                  id={jogo.id}
-                />
+                <CardJogo game={jogo} itsInTheStore={true} />
               </li>
             ))}
           </ListaDeJogos>
           <ListaDeJogos title="Todos os Jogos">
             {jogos.map((jogo) => (
               <li key={jogo.id}>
-                <CardJogo
-                  key={jogo.id}
-                  name={jogo.name}
-                  avaliationGame={jogo.avaliationGame}
-                  image={jogo.image}
-                  descontPrice={jogo.descontPrice}
-                  price={jogo.price}
-                  newPrice={jogo.newPrice}
-                  tag={jogo.tag}
-                  description={jogo.description}
-                  developmente={jogo.developmente}
-                  realeaseDate={jogo.realeaseDate}
-                  id={jogo.id}
-                />
+                <CardJogo game={jogo} itsInTheStore={true} />
               </li>
             ))}
           </ListaDeJogos>
@@ -181,20 +142,7 @@ const Loja = () => {
           <ListaDeJogos title={`${filtro}`}>
             {selectGames.map((jogo) => (
               <li key={jogo.id}>
-                <CardJogo
-                  key={jogo.id}
-                  name={jogo.name}
-                  avaliationGame={jogo.avaliationGame}
-                  image={jogo.image}
-                  descontPrice={jogo.descontPrice}
-                  price={jogo.price}
-                  newPrice={jogo.newPrice}
-                  tag={jogo.tag}
-                  description={jogo.description}
-                  developmente={jogo.developmente}
-                  realeaseDate={jogo.realeaseDate}
-                  id={jogo.id}
-                />
+                <CardJogo game={jogo} itsInTheStore={true} />
               </li>
             ))}
           </ListaDeJogos>

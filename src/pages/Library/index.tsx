@@ -1,12 +1,16 @@
 import Bibilioteca from '../../containers/Biblioteca'
 import Game from '../../models/jogo'
-import { useGetGamesQuery } from '../../services/index'
+import { useGetGamesQuery } from '../../services/api'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 const Library = () => {
-  const { data: jogo, isLoading: carregando } = useGetGamesQuery()
-  if (carregando) return <h1>Carregando...</h1>
+  const { item } = useSelector((state: RootState) => state.favorito) // using favoritoState just now
 
-  return <Bibilioteca jogo={jogo as Game[]} />
+  // const { data: jogo, isLoading: carregando } = useGetGamesQuery()
+  // if (carregando) return <h1>Carregando...</h1>
+
+  return <Bibilioteca jogo={item} />
 }
 
 export default Library

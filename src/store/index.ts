@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { Api } from '../services/index'
+import { Api } from '../services/api'
 
 import shoppingCart from './reducers/shoppingCart'
 import library from './reducers/library'

@@ -30,22 +30,11 @@ const Favoritos = () => {
             buttonView={true}
             title={`Meus Favoritos (${item.length})`}
             icon={Icones.coracaoVermelho}
+            id="favoritos"
           >
             {item?.map((jogo) => (
               <li key={jogo.id}>
-                <CardJogo
-                  name={jogo.name}
-                  description={jogo.description}
-                  image={jogo.image}
-                  avaliationGame={jogo.avaliationGame}
-                  realeaseDate={jogo.realeaseDate}
-                  developmente={jogo.developmente}
-                  tag={jogo.tag}
-                  price={jogo.price}
-                  newPrice={jogo.newPrice}
-                  descontPrice={jogo.descontPrice}
-                  id={jogo.id}
-                />
+                <CardJogo game={jogo} itsInTheStore={true} />
               </li>
             ))}
           </ListaDeJogos>

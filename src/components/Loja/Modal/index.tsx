@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { addGames } from '../../../store/reducers/library'
 
-import { FormatPrice } from '../../../utils/formatPrices'
+import { RootState } from '../../../store'
 
 import Icones from '../../../styles/icones'
 import * as S from './styles'
@@ -17,7 +16,10 @@ import {
 } from '../../../styles'
 import Paragrafo from '../../Paragrafo'
 import { P } from '../../Paragrafo/Paragrafo'
-import { RootState } from '../../../store'
+import useFavorites from '../../../hooks/useFavorites'
+
+import { addGames } from '../../../store/reducers/library'
+import { FormatPrice } from '../../../utils/formatPrices'
 import { close, open } from '../../../store/reducers/modal'
 
 export type ModalProps = {
@@ -26,6 +28,7 @@ export type ModalProps = {
 }
 
 const Modal = () => {
+  const { favoritarGame, getIdFavoriteItem } = useFavorites()
   const dispatch = useDispatch()
   const { isOpen, game } = useSelector((state: RootState) => state.modal)
 
@@ -50,7 +53,14 @@ const Modal = () => {
               <TagDesconto>- {game.descontPrice}% off</TagDesconto>
             )}
             <S.Icones>
-              <BotaoAcao title="Favoritar Game">{Icones.coracao}</BotaoAcao>
+              <BotaoAcao
+                title="Favoritar Game"
+                action={() => favoritarGame(game)}
+              >
+                {getIdFavoriteItem(game.id)
+                  ? Icones.coracaoVermelho
+                  : Icones.coracao}
+              </BotaoAcao>
               <BotaoAcao title="Fechar Janela" action={closeModal}>
                 {Icones.X}
               </BotaoAcao>

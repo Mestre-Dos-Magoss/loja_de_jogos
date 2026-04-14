@@ -1,4 +1,4 @@
-import { useGetGamesQuery } from '../../../services'
+import { useGetGamesQuery } from '../../../services/api'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 

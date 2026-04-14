@@ -8,6 +8,7 @@ export type Props = {
   icon?: ReactElement
   colorIcon?: string
   buttonView?: boolean
+  id?: string
 }
 
 const ListaDeJogos = ({
@@ -15,12 +16,13 @@ const ListaDeJogos = ({
   title,
   icon,
   colorIcon,
-  buttonView
+  buttonView,
+  id
 }: Props) => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <S.ContainerCards>
+    <S.ContainerCards id={id}>
       <S.HeaderSection buttonView={buttonView as boolean}>
         <S.Secao>
           <S.ColorIcon colorIcon={colorIcon}>{icon}</S.ColorIcon>

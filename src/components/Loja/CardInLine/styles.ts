@@ -9,6 +9,7 @@ export const CardInLine = styled.div`
   width: 100%;
   height: 140px;
   padding: 16px;
+  margin-bottom: 1em;
   border: 1.4px solid ${variaveis.corTextoSecundaria};
   border-radius: 16px;
   background-color: ${variaveis.cinzaFraco};
